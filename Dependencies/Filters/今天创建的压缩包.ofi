@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<filter desc="今天创建的压缩包" name="今天创建的压缩包">
+	<clause item_type="files" match="yes" type="type" />
+	<clause link="and" match="yes" type="name" wildcards="yes">*.(000|001|7z|arj|bz2|bzip2|cab|cb7|cbr|cbz|cpio|deb|dmg|esd|gz|gzip|iso|jar|lha|lzh|lzma|r00|r01|rar|rpm|swm|tar|taz|tbz|tbz2|tgz|tlz|tpz|txz|wim|xar|xz|z|zip|zipx|zst)</clause>
+	<clause date_type="created" link="and" match="yes" range="1" range_type="within" range_unit="day" type="datetime" />
+</filter>

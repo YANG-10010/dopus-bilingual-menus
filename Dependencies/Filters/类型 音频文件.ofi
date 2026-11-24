@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<filter desc="类型 音频文件" name="类型 音频文件">
+	<clause item_type="files" match="yes" type="type" />
+	<clause link="and" match="yes" type="name" wildcards="yes">*.(aac|ape|flac|m4a|m4b|mid|mka|mp1|mp2|mp3|ogg|opus|spx|wav|wma)</clause>
+</filter>

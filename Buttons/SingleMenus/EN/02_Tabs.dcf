@@ -1,0 +1,1122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<button version="13.0" backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+	<label>Ta&amp;bs</label>
+	<hotkeys>
+		<chord>
+			<key disable="yes">ctrl+shift+M</key>
+			<key>T</key>
+		</chord>
+	</hotkeys>
+	<icon1>#foldertabs</icon1>
+	<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+		<label>Ta&amp;b Position</label>
+		<icon1>#foldertabgrouplist</icon1>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>Ta&amp;b Position</label>
+			<tip>Reset tab bar position to Preferences default</tip>
+			<icon1>#foldertabgrouplist</icon1>
+			<function type="normal">
+				<instruction>Set TABPOSITION=reset</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="label" textcol="none">
+			<label>&amp;Vertical Together</label>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction> Set TABPOSITION=left,together</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="label" textcol="none">
+			<label>&amp;Horizontal Together</label>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction> Set TABPOSITION=above,together</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="label" textcol="none">
+			<label>Tabs &amp;Above</label>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction>Set TABPOSITION=above</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="label" textcol="none">
+			<label>Tabs &amp;Below</label>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction>Set TABPOSITION=below</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="label" textcol="none">
+			<label>Tabs &amp;Left</label>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction>Set TABPOSITION=left </instruction>
+			</function>
+		</button>
+		<button backcol="none" display="label" textcol="none">
+			<label>Tabs &amp;Right</label>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction>Set TABPOSITION=right</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="label" textcol="none">
+			<label>&amp;Together</label>
+			<tip>Place dual-display tab bars next to each other</tip>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction>Set TABPOSITION=together</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="label" textcol="none">
+			<label>A&amp;part</label>
+			<tip>Place dual-display tab bars on opposite sides</tip>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction>Set TABPOSITION=apart</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>&amp;Set Tab Width to 120</label>
+			<tip>Effective only when the tab bar is on the left or right</tip>
+			<icon1>#foldertabs</icon1>
+			<function type="normal">
+				<instruction>Set TABWIDTH=120</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>Tab Ba&amp;r Preferences...</label>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>//Prefs PAGE=foldertabs</instruction>
+				<instruction>Prefs PAGE=&quot;foldertabbars&quot;</instruction>
+			</function>
+		</button>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>&amp;Open Path in New Tab</label>
+		<tip>Open current folder, selected folders, or symlink/.lnk target in a new tab</tip>
+		<hotkeys>
+			<key disable="yes">ctrl+T</key>
+		</hotkeys>
+		<icon1>#newtab</icon1>
+		<function type="script">
+			<instruction>@script JScript</instruction>
+			<instruction>//为选定文件夹新建标签</instruction>
+			<instruction>//Go NEWTAB=nofocus,findexisting FROMSEL</instruction>
+			<instruction />
+			<instruction>function OnClick(clickData)</instruction>
+			<instruction>{</instruction>
+			<instruction>	//DOpus.ClearOutput();</instruction>
+			<instruction>	var cmd = clickData.func.command;</instruction>
+			<instruction>	cmd.deselect = false;</instruction>
+			<instruction>	var Mycmd = &quot;Go CURRENT NEWTAB&quot;;</instruction>
+			<instruction>	var stab = clickData.func.sourcetab;</instruction>
+			<instruction>	//if (stab.path.drive == 0 &amp;&amp; stab.selected.count &gt; 0)</instruction>
+			<instruction>	//Mycmd = &quot;Go OPENCONTAINER NEWTAB=findexisting&quot;;</instruction>
+			<instruction>	var sels = stab.selected;</instruction>
+			<instruction>	if(sels.count &gt; 0){</instruction>
+			<instruction>		if(sels(0).is_junction || sels(0).is_symlink || sels(0).ext == &quot;.lnk&quot; || //第一个选中项若是指向性的，则打开其目标位置</instruction>
+			<instruction>			(!sels(0).is_dir &amp;&amp; DOpus.FSUtil.PathType(stab.path) == &quot;coll&quot;) ){ //在文件收集中，若选中第一项是文件则打开其父目录</instruction>
+			<instruction>			Mycmd = &quot;Go opencontainer=target NEWTAB=findexisting,tofront&quot;;</instruction>
+			<instruction>		} else {</instruction>
+			<instruction>			if (stab.selected_dirs.count &gt; 0)</instruction>
+			<instruction>				Mycmd = &quot;Go NEWTAB=nofocus,findexisting FROMSEL&quot;;//若选中了文件夹，则在新标签中打开文件夹</instruction>
+			<instruction>			else //if (stab.selected_files.count &gt; 0)</instruction>
+			<instruction>			{//未选中文件夹，只选中文件时，遍历判断是否包含.lnk快捷方式</instruction>
+			<instruction>				for (var eSel = new Enumerator(stab.selected); !eSel.atEnd(); eSel.moveNext())</instruction>
+			<instruction>				{</instruction>
+			<instruction>					if (eSel.item().ext == &quot;.lnk&quot;)</instruction>
+			<instruction>					{</instruction>
+			<instruction>						Mycmd = &quot;Go opencontainer=target NEWTAB=findexisting,tofront&quot;;//打开快捷方式的目标位置</instruction>
+			<instruction>						break;</instruction>
+			<instruction>					}</instruction>
+			<instruction>				}</instruction>
+			<instruction>			}</instruction>
+			<instruction>		}</instruction>
+			<instruction>	}</instruction>
+			<instruction>	cmd.RunCommand(Mycmd);</instruction>
+			<instruction>}</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey="alt+T" hotkey_label="yes" textcol="none">
+		<label>Open Selected in Dest Tab</label>
+		<tip>Open current folder, selected folders, or .lnk target in the destination pane\n</tip>
+		<icon1>#getsizes</icon1>
+		<function type="script">
+			<instruction />
+			<instruction>@script JScript</instruction>
+			<instruction>/*function OnClick(clickData)</instruction>
+			<instruction>{</instruction>
+			<instruction>	var cmd = clickData.func.command;</instruction>
+			<instruction>	cmd.deselect = false; // Prevent automatic deselection</instruction>
+			<instruction>	if(clickData.func.sourcetab.selected_dirs.count == 0)</instruction>
+			<instruction>	cmd.RunCommand(&quot;go current newtab=deflister,findexisting openindual&quot;);</instruction>
+			<instruction>	else</instruction>
+			<instruction>	cmd.RunCommand(&quot;go fromsel newtab=deflister,findexisting openindual&quot;);</instruction>
+			<instruction>}</instruction>
+			<instruction>*/</instruction>
+			<instruction>function OnClick(clickData)</instruction>
+			<instruction>{</instruction>
+			<instruction>	//DOpus.ClearOutput();</instruction>
+			<instruction>	var cmd = clickData.func.command;</instruction>
+			<instruction>	cmd.deselect = false; // Prevent automatic deselection</instruction>
+			<instruction>	var Mycmd = &quot;Go CURRENT NEWTAB=deflister,findexisting openindual&quot;;</instruction>
+			<instruction>	var stab = clickData.func.sourcetab;</instruction>
+			<instruction>	//if (stab.path.drive == 0 &amp;&amp; stab.selected.count &gt; 0)</instruction>
+			<instruction>	//Mycmd = &quot;Go OPENCONTAINER NEWTAB=deflister,findexisting openindual&quot;;</instruction>
+			<instruction>		if (stab.selected_dirs.count &gt; 0)</instruction>
+			<instruction>		Mycmd = &quot;go fromsel newtab=deflister,findexisting openindual&quot;;</instruction>
+			<instruction>		else if (stab.selected_files.count &gt; 0)</instruction>
+			<instruction>		{</instruction>
+			<instruction>			for (var eSel = new Enumerator(stab.selected); !eSel.atEnd(); eSel.moveNext())</instruction>
+			<instruction>			{</instruction>
+			<instruction>				if (eSel.item().ext == &quot;.lnk&quot;)</instruction>
+			<instruction>				{</instruction>
+			<instruction>					DOpus.Output(eSel.item().ext);</instruction>
+			<instruction>					Mycmd = &quot;go opencontainer=target newtab=deflister,findexisting,tofront openindual&quot;;</instruction>
+			<instruction>					break;</instruction>
+			<instruction>				}</instruction>
+			<instruction>			}</instruction>
+			<instruction>		}</instruction>
+			<instruction>	cmd.RunCommand(Mycmd);</instruction>
+			<instruction>}</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey="alt+Y" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>Move Tab to Dest (&amp;Y)</label>
+		<tip>Duplicate tab to destination if only one tab exists; otherwise move tab to destination</tip>
+		<icon1>#syncpane1</icon1>
+		<function type="script">
+			<instruction>@script JScript</instruction>
+			<instruction>function OnClick(clickData)</instruction>
+			<instruction>{</instruction>
+			<instruction>	var cmd = clickData.func.command;</instruction>
+			<instruction>	cmd.deselect = false;</instruction>
+			<instruction>	var vlis = clickData.func.sourcetab.lister;</instruction>
+			<instruction>	//if(vlis.dual != 0 || clickData.func.tabs &gt; 1){</instruction>
+			<instruction>	if(vlis.tabs.count == 1)</instruction>
+			<instruction>		cmd.RunCommand(&quot;Go CURRENT NEWTAB=deflister,findexisting openindual&quot;);</instruction>
+			<instruction>	else</instruction>
+			<instruction>		cmd.RunCommand(&quot;Go TABMOVE=active&quot;);</instruction>
+			<instruction>}</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey="186,4" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>Split Tabs to Dual (&amp;F)</label>
+		<tip>When in single-display mode, split current and following tabs to the second pane</tip>
+		<icon1>#syncpane1</icon1>
+		<function type="normal">
+			<instruction>Go TABMOVE=split</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey="ctrl+shift+Y" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>&amp;Merge Dual Tabs into Single Pane</label>
+		<icon1>#syncpane1</icon1>
+		<function type="script">
+			<instruction>//@hideif:!Set DUAL=toggle</instruction>
+			<instruction>@script JScript</instruction>
+			<instruction>function OnClick(clickData)</instruction>
+			<instruction>{</instruction>
+			<instruction>	var cmd = clickData.func.command;</instruction>
+			<instruction>	cmd.deselect = false;</instruction>
+			<instruction>	var sTab = clickData.func.sourcetab</instruction>
+			<instruction>	var lis = sTab.lister;</instruction>
+			<instruction>	if(lis.dual==0) return;</instruction>
+			<instruction />
+			<instruction>	var sumleft = lis.tabsleft.count, sumright = lis.tabsright.count;</instruction>
+			<instruction>	var l_r = &quot;right&quot;, sum = sumright, selectN = &quot;first&quot;, side = &quot; OPENINRIGHT&quot;, tabN = &quot;&quot;;</instruction>
+			<instruction>	if(sumleft &lt; sumright){</instruction>
+			<instruction>		l_r = &quot;left&quot;; sum = sumleft; selectN = &quot;last&quot;; side = &quot; OPENINLEFT&quot;; tabN = &quot;=0&quot;;</instruction>
+			<instruction>	}</instruction>
+			<instruction />
+			<instruction>	//if(sTab.right){</instruction>
+			<instruction>	for(var i=0; i&lt;sum; i++)</instruction>
+			<instruction>		{</instruction>
+			<instruction>			cmd.RunCommand(&apos;Set FOCUS=&apos;+l_r);</instruction>
+			<instruction>			cmd.RunCommand(&apos;Go TABSELECT=&apos;+selectN+side);</instruction>
+			<instruction>			lis.Update()</instruction>
+			<instruction>			//log(lis.activetab.path)</instruction>
+			<instruction>			cmd.SetSourceTab(lis.activetab);</instruction>
+			<instruction>			cmd.RunCommand(&apos;Go TABMOVE&apos;+tabN);</instruction>
+			<instruction>			lis.Update()</instruction>
+			<instruction>			if(lis.dual==0) break;</instruction>
+			<instruction>		}</instruction>
+			<instruction>	</instruction>
+			<instruction>	/*</instruction>
+			<instruction>	var sTab = clickData.func.sourcetab</instruction>
+			<instruction>	var dTab = clickData.func.desttab</instruction>
+			<instruction>	var LTab, RTab</instruction>
+			<instruction>	if(sTab.right){</instruction>
+			<instruction>		LTab = dTab</instruction>
+			<instruction>		RTab = sTab</instruction>
+			<instruction>	} else {</instruction>
+			<instruction>		LTab = sTab</instruction>
+			<instruction>		RTab = dTab</instruction>
+			<instruction>	}</instruction>
+			<instruction>	*/</instruction>
+			<instruction>}</instruction>
+			<instruction />
+			<instruction>function log(str){DOpus.Output(str,false,true);}</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey="191,2" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>Open Container in Dest Tab</label>
+		<tip>Open parent folder of selected items in destination pane (useful in Find Results / Collections)</tip>
+		<icon1>#getsizes</icon1>
+		<function type="normal">
+			<instruction>@nodeselect</instruction>
+			<instruction>//Go OPENCONTAINER NEWTAB=findexisting,nofocus</instruction>
+			<instruction>Go OPENCONTAINER OPENINDUAL NEWTAB</instruction>
+			<instruction>//SET DEST=FOCUS</instruction>
+			<instruction>//Set QUICKFILTERCLEAR</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>&amp;New Tab for Parent</label>
+		<tip>Open a new tab showing the parent folder</tip>
+		<icon1>#goupnewtab</icon1>
+		<function type="normal">
+			<instruction>Go UP NEWTAB</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" separate="yes" textcol="none">
+		<label>New Blank Tab (&amp;K)</label>
+		<tip>Open a new blank tab and focus the location bar</tip>
+		<icon1>#newtab</icon1>
+		<function type="normal">
+			<instruction>//Go NEWTAB TABPOS=+1</instruction>
+			<instruction>Go NEWTAB TABPOS=last</instruction>
+			<instruction>Set FOCUS=pathfield</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+		<label>&amp;Close Tabs</label>
+		<icon1>#closetab</icon1>
+		<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+			<label>&amp;Close Tab</label>
+			<tip>Close the current Folder Tab</tip>
+			<hotkeys>
+				<key disable="yes">ctrl+W</key>
+				<key disable="yes">ctrl+f4</key>
+			</hotkeys>
+			<icon1>#closetab</icon1>
+			<function type="normal">
+				<instruction>Go TABCLOSE</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Cl&amp;ose Tabs to the Left</label>
+			<hotkeys>
+				<key disable="yes">ctrl+shift+W</key>
+			</hotkeys>
+			<icon1>#closelister</icon1>
+			<function type="normal">
+				<instruction>Go TABCLOSEALL=left</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" textcol="none">
+			<label>Clo&amp;se Tabs to the Right\t</label>
+			<icon1>#closelister</icon1>
+			<function type="normal">
+				<instruction>Go TABCLOSEALL=right</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>&amp;Close Other Tabs</label>
+			<tip>Close all tabs except the active tab</tip>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>escape</key>
+				</chord>
+			</hotkeys>
+			<icon1>#closelister</icon1>
+			<function type="normal">
+				<instruction>Go TABCLOSEALL</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Close &amp;Duplicate Tabs</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>space</key>
+				</chord>
+			</hotkeys>
+			<icon1>#closetab</icon1>
+			<function type="script">
+				<instruction>@script JScript</instruction>
+				<instruction>function OnClick(clickData)</instruction>
+				<instruction>{</instruction>
+				<instruction>	var cmd = clickData.func.command;</instruction>
+				<instruction>	cmd.deselect = false;</instruction>
+				<instruction>	cmd.ClearFiles();</instruction>
+				<instruction />
+				<instruction>	var lister = clickData.func.sourcetab.lister;</instruction>
+				<instruction>	closeDuplicateTabs(cmd, lister.tabsleft);</instruction>
+				<instruction>	closeDuplicateTabs(cmd, lister.tabsright);</instruction>
+				<instruction>}</instruction>
+				<instruction />
+				<instruction>function closeDuplicateTabs(cmd, tabList)</instruction>
+				<instruction>{</instruction>
+				<instruction>	var mapPaths = DOpus.Create.Map();</instruction>
+				<instruction>	var vecTabsToClose = DOpus.Create.Vector();</instruction>
+				<instruction>	var tabIndex = 0;</instruction>
+				<instruction />
+				<instruction>	for (var eTabs = new Enumerator(tabList); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+				<instruction>	{</instruction>
+				<instruction>		var tab = eTabs.item();</instruction>
+				<instruction>		var tabPath = tab.path;</instruction>
+				<instruction>		</instruction>
+				<instruction>		if (mapPaths.exists(tabPath))</instruction>
+				<instruction>		{</instruction>
+				<instruction>			vecTabsToClose.push_back(tab);</instruction>
+				<instruction>			if (tab.visible)</instruction>
+				<instruction>			{</instruction>
+				<instruction>				cmd.RunCommand(&quot;Go TABSELECT=&quot; + mapPaths(tabPath));</instruction>
+				<instruction>			}</instruction>
+				<instruction>		}</instruction>
+				<instruction>		else</instruction>
+				<instruction>		{</instruction>
+				<instruction>			mapPaths(tabPath) = tabIndex;</instruction>
+				<instruction>		}</instruction>
+				<instruction>		</instruction>
+				<instruction>		tabIndex = tabIndex + 1;</instruction>
+				<instruction>	}</instruction>
+				<instruction />
+				<instruction>	if (vecTabsToClose.empty)</instruction>
+				<instruction>		return;</instruction>
+				<instruction />
+				<instruction>	cmd.Clear();</instruction>
+				<instruction />
+				<instruction>	for (var eTabs = new Enumerator(vecTabsToClose); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+				<instruction>	{</instruction>
+				<instruction>		var tab = eTabs.item();</instruction>
+				<instruction>		if (tab.lock == &quot;off&quot;)</instruction>
+				<instruction>			cmd.AddLine(&quot;Go TABCLOSE=&quot; + tab);</instruction>
+				<instruction>	}</instruction>
+				<instruction />
+				<instruction>	cmd.Run();</instruction>
+				<instruction>	cmd.Clear();</instruction>
+				<instruction>}</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>C&amp;lose C: Drive Tabs</label>
+			<tip>Close all tabs showing a path on C: drive</tip>
+			<icon1>#closetab</icon1>
+			<function type="normal">
+				<instruction> Go TABCLOSE PATH=C:\*</instruction>
+			</function>
+		</button>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" label_pos="right" separate="yes" textcol="none">
+		<label>Reopen Close&amp;d Tab</label>
+		<tip>Reopen the last closed tab(s)</tip>
+		<hotkeys>
+			<key disable="yes">ctrl+shift+T</key>
+		</hotkeys>
+		<icon1>#undoclosetab</icon1>
+		<function type="normal">
+			<instruction>Go TABUNDOCLOSE</instruction>
+			<instruction>//TabRescue LAST</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none" type="menu_button">
+		<label>Recently Closed (&amp;TabRescue)</label>
+		<tip>Script: TabRescue - manage recently closed tabs</tip>
+		<icon1>#undoclosetab</icon1>
+		<function type="normal">
+			<instruction>//https://resource.dopus.com/t/tabrescue-quickly-restore-your-closed-tabs/55768</instruction>
+			<instruction>//TabRescue LAST</instruction>
+			<instruction>TabRescue LIST</instruction>
+		</function>
+		<button backcol="none" display="label" textcol="none">
+			<label>&amp;Clear Closed Tab History</label>
+			<icon1>#newcommand</icon1>
+			<function type="normal">
+				<instruction>TabRescue CLEAR</instruction>
+				<instruction />
+				<instruction>//暂停记录关闭的标签历史</instruction>
+				<instruction>//TabRescue TOGGLEPAUSE</instruction>
+			</function>
+		</button>
+	</button>
+	<button backcol="none" display="both" hotkey="shift+tab" hotkey_label="yes" textcol="none">
+		<label>Tab &amp;Switcher Menu</label>
+		<tip>Popup tab switcher menu (Tab/Shift+Tab to navigate, Space to preview, Enter to activate)</tip>
+		<icon1>#foldertabgrouplist</icon1>
+		<function type="normal">
+			<instruction>Go TABSWITCHER</instruction>
+			<instruction>//Go TABLIST=keys</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+		<label>Ta&amp;b List</label>
+		<hotkeys>
+			<chord>
+				<key>tab</key>
+				<key>Q</key>
+			</chord>
+		</hotkeys>
+		<icon1>#Program_Icos:55.Menu</icon1>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>Ta&amp;b List</label>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABLIST=keys</instruction>
+				<instruction>//Go TABLIST=keys OPENINDEST</instruction>
+			</function>
+		</button>
+	</button>
+	<button backcol="none" display="both" dropdown_glyph="yes" label_pos="right" textcol="none" type="menu">
+		<label>Go to T&amp;ab</label>
+		<icon1>#newmenu</icon1>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>&amp;Last Tab</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>192,0</key>
+				</chord>
+			</hotkeys>
+			<icon1>#goupnewtab</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=last</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;1</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>1</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=first</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;2</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>2</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=1</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;3</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>3</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=2</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;4</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>4</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=3</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;5</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>5</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=4</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;6</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>6</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=5</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;7</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>7</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=6</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;8</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>8</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=7</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab &amp;9</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>9</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=8</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" separate="yes" textcol="none">
+			<label>Tab 1&amp;0</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>0</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=9</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>L&amp;ast Tab (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num0</key>
+				</chord>
+			</hotkeys>
+			<icon1>#goupnewtab</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=last OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 1 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num1</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=first OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 2 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num2</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=1 OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 3 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num3</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=2 OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 4 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num4</key>
+				</chord>
+			</hotkeys>
+			<icon1>#default:empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=3 OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 5 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num5</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=4 OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 6 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num6</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=5 OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 7 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num7</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=6 OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 8 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num8</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=7 OPENINDEST</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+			<label>Tab 9 (Dest)</label>
+			<hotkeys>
+				<chord>
+					<key>tab</key>
+					<key>num9</key>
+				</chord>
+			</hotkeys>
+			<icon1>#empty</icon1>
+			<function type="normal">
+				<instruction>Go TABSELECT=8 OPENINDEST</instruction>
+			</function>
+		</button>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+		<label>&amp;Previous Tab</label>
+		<tip>Switch to the previous tab in the active pane</tip>
+		<hotkeys>
+			<key>ctrl+shift+tab</key>
+			<key disable="yes">ctrl+left</key>
+		</hotkeys>
+		<icon1>#copysourcedest_left</icon1>
+		<function type="normal">
+			<instruction>go tabselect -1</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+		<label>&amp;Next Tab</label>
+		<tip>Switch to the next tab in the active pane</tip>
+		<hotkeys>
+			<key>ctrl+tab</key>
+			<key disable="yes">ctrl+right</key>
+		</hotkeys>
+		<icon1>#copysourcedest_right</icon1>
+		<function type="normal">
+			<instruction>go tabselect +1</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey="219,2" hotkey_label="yes" textcol="none">
+		<label>&amp;Move Tab Left</label>
+		<icon1>#goback</icon1>
+		<function type="normal">
+			<instruction>Go TABPOS=-1</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey="221,2" hotkey_label="yes" textcol="none">
+		<label>Mo&amp;ve Tab Right</label>
+		<icon1>#goforward</icon1>
+		<function type="normal">
+			<instruction>Go TABPOS=+1</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" separate="yes" textcol="none">
+		<label>Switch Between Last Two Tabs</label>
+		<hotkeys>
+			<key>alt+Z</key>
+			<key>192,4</key>
+		</hotkeys>
+		<icon1>#syncpane</icon1>
+		<function type="normal">
+			<instruction>Go TABSELECT=prev</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+		<label>Tab C&amp;olor</label>
+		<icon1>#setcolor</icon1>
+		<button backcol="#ff0000" display="label" label_pos="right" textcol="#000000">
+			<label>&amp;Red</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #ff0000</instruction>
+			</function>
+		</button>
+		<button backcol="#00ff00" display="label" label_pos="right" textcol="#000000">
+			<label>&amp;Green</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #00ff00</instruction>
+			</function>
+		</button>
+		<button backcol="#0000ff" display="label" label_pos="right" textcol="none">
+			<label>&amp;Blue</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #0000ff</instruction>
+			</function>
+		</button>
+		<button backcol="#ffff00" display="label" label_pos="right" textcol="#000000">
+			<label>&amp;Yellow</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #ffff00</instruction>
+			</function>
+		</button>
+		<button backcol="#ff00ff" display="label" label_pos="right" textcol="#000000">
+			<label>&amp;Magenta</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #ff00ff</instruction>
+			</function>
+		</button>
+		<button backcol="#00ffff" display="label" label_pos="right" textcol="#000000">
+			<label>&amp;Cyan</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #00ffff</instruction>
+			</function>
+		</button>
+		<button backcol="#98c400" display="label" label_pos="right" textcol="#000000">
+			<label>&amp;Lime</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #7ba000</instruction>
+			</function>
+		</button>
+		<button backcol="#ff8000" display="label" label_pos="right" textcol="#000000">
+			<label>&amp;Orange</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #ff8000</instruction>
+			</function>
+		</button>
+		<button backcol="#8d008d" display="label" label_pos="right" textcol="#ffffff">
+			<label>Dark &amp;Purple</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #8d008d</instruction>
+			</function>
+		</button>
+		<button backcol="#930000" display="label" label_pos="right" textcol="#ffffff">
+			<label>&amp;Dark Red</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #760000</instruction>
+			</function>
+		</button>
+		<button backcol="#005124" display="label" label_pos="right" textcol="#ffffff">
+			<label>Dar&amp;k Green</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #005124</instruction>
+			</function>
+		</button>
+		<button backcol="#001591" display="label" label_pos="right" textcol="#ffffff">
+			<label>D&amp;ark Blue</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #001591</instruction>
+			</function>
+		</button>
+		<button backcol="#ffffff" display="label" label_pos="right" textcol="#000000">
+			<label>&amp;White</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #FFFFFF</instruction>
+			</function>
+		</button>
+		<button backcol="#000000" display="label" label_pos="right" textcol="#ffffff">
+			<label>Blac&amp;k</label>
+			<icon1>#setcolor</icon1>
+			<function type="normal">
+				<instruction>Go TABCOLOR #000000</instruction>
+			</function>
+		</button>
+	</button>
+	<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+		<label>Cl&amp;ear Tab Color</label>
+		<icon1>#setcolor</icon1>
+		<function type="normal">
+			<instruction>Go TABCOLOR=reset</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>&amp;Lock Tab</label>
+		<hotkeys>
+			<chord>
+				<key>tab</key>
+				<key>capslock</key>
+			</chord>
+		</hotkeys>
+		<icon1>#formatlock</icon1>
+		<function type="normal">
+			<instruction>//锁定</instruction>
+			<instruction>//Go TABLOCK=lock,toggle</instruction>
+			<instruction>//锁定(重用未锁定的标签页)</instruction>
+			<instruction>//Go TABLOCK=lockreuse,toggle</instruction>
+			<instruction>//锁定(允许改变路径)  [选项/文件夹标签页/锁定] 可取消勾选【激活另一个标签页时重置（在允许文件夹更改模式下）】</instruction>
+			<instruction>Go TABLOCK=lockchanges,toggle</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>Lin&amp;k Tab</label>
+		<hotkeys>
+			<chord>
+				<key>tab</key>
+				<key>L</key>
+			</chord>
+		</hotkeys>
+		<icon1>#Windows_icos_plus:37.Link Paths</icon1>
+		<function type="normal">
+			<instruction>Go TABLINK=toggle</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+		<label>Switch So&amp;urce/Dest Pane</label>
+		<icon1>#swapsourcedest</icon1>
+		<function type="normal">
+			<instruction>@if:set dual=off</instruction>
+			<instruction>Set DUAL=toggle,remember</instruction>
+			<instruction>@if:else</instruction>
+			<instruction>Set FOCUS=dest</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+		<label>Swap Active Tabs</label>
+		<hotkeys>
+			<chord>
+				<key>tab</key>
+				<key>X</key>
+			</chord>
+		</hotkeys>
+		<icon1>#Program_Icos:54.Swap tabs</icon1>
+		<function type="normal">
+			<instruction>@disableif:set dual=off</instruction>
+			<instruction>Go TABSWAP</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey="ctrl+alt+X" hotkey_label="yes" textcol="none">
+		<label>S&amp;wap Dual Panes</label>
+		<tip>Swap left/right (or top/bottom) dual file displays</tip>
+		<icon1>#swapsourcedest_horiz</icon1>
+		<function type="normal">
+			<instruction>@icon:swapsourcedest_vert,Set dual=horiz</instruction>
+			<instruction>@disableif:set dual=off</instruction>
+			<instruction>Go SWAP</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" label_pos="right" separate="yes" textcol="none">
+		<label>Sort Tabs</label>
+		<tip>Sort Tabs</tip>
+		<hotkeys>
+			<chord>
+				<key>tab</key>
+				<key>S</key>
+			</chord>
+		</hotkeys>
+		<icon1>#sortby</icon1>
+		<function type="script">
+			<instruction>@script JScript</instruction>
+			<instruction>function OnClick(clickData)</instruction>
+			<instruction>{</instruction>
+			<instruction>	var cmd = clickData.func.command;</instruction>
+			<instruction>	cmd.deselect = false; // Prevent automatic deselection</instruction>
+			<instruction>	cmd.ClearFiles();</instruction>
+			<instruction />
+			<instruction>	sortTabs(cmd, clickData.func.sourcetab.lister.tabsleft);</instruction>
+			<instruction>	sortTabs(cmd, clickData.func.sourcetab.lister.tabsright);</instruction>
+			<instruction>}</instruction>
+			<instruction />
+			<instruction>function sortTabs(cmd, tabList)</instruction>
+			<instruction>{</instruction>
+			<instruction>	var setLabels = DOpus.Create.StringSet();</instruction>
+			<instruction>	var mapLabelToTabVec = DOpus.Create.Map();</instruction>
+			<instruction />
+			<instruction>	for (var eTabs = new Enumerator(tabList); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+			<instruction>	{</instruction>
+			<instruction>		var tab = eTabs.item();</instruction>
+			<instruction>		var label = tab.displayed_label.toLowerCase();</instruction>
+			<instruction />
+			<instruction>		setLabels.insert(label);</instruction>
+			<instruction />
+			<instruction>		if (!mapLabelToTabVec.exists(label))</instruction>
+			<instruction>		{</instruction>
+			<instruction>			mapLabelToTabVec(label) = DOpus.Create.Vector();</instruction>
+			<instruction>		}</instruction>
+			<instruction>		mapLabelToTabVec(label).push_back(tab);</instruction>
+			<instruction>	}</instruction>
+			<instruction />
+			<instruction>	var vecLabels = DOpus.Create.Vector();</instruction>
+			<instruction />
+			<instruction>	for (var eLabels = new Enumerator(setLabels); !eLabels.atEnd(); eLabels.moveNext())</instruction>
+			<instruction>	{</instruction>
+			<instruction>		vecLabels.push_back(eLabels.item());</instruction>
+			<instruction>	}</instruction>
+			<instruction>	vecLabels.sort();</instruction>
+			<instruction />
+			<instruction>	cmd.Clear();</instruction>
+			<instruction>	var tabPos = 0;</instruction>
+			<instruction />
+			<instruction>	for (var eLabels = new Enumerator(vecLabels); !eLabels.atEnd(); eLabels.moveNext())</instruction>
+			<instruction>	{</instruction>
+			<instruction>		var vecTabs = mapLabelToTabVec(eLabels.item());</instruction>
+			<instruction>		for (var eTabs = new Enumerator(vecTabs); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+			<instruction>		{</instruction>
+			<instruction>			var tab = eTabs.item();</instruction>
+			<instruction>			cmd.AddLine(&quot;Go TABPOS=&quot; + tabPos + &quot;,&quot; + tab);</instruction>
+			<instruction>			++tabPos;</instruction>
+			<instruction>		}</instruction>
+			<instruction>	}</instruction>
+			<instruction />
+			<instruction>	if (tabPos &gt; 1)</instruction>
+			<instruction>	{</instruction>
+			<instruction>		cmd.Run();</instruction>
+			<instruction>	}</instruction>
+			<instruction>}</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>&amp;Go To Root</label>
+		<icon1>#goup</icon1>
+		<function type="normal">
+			<instruction>Go ROOT USEQUALKEYS</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>Go to &amp;Initial Folder</label>
+		<tip>Navigate back to the initial folder where this tab was opened</tip>
+		<hotkeys>
+			<chord>
+				<key>tab</key>
+				<key>home</key>
+			</chord>
+		</hotkeys>
+		<icon1>#goback</icon1>
+		<function type="normal">
+			<instruction>//Go INITIALDIR</instruction>
+			<instruction>//Go TABSELECT home </instruction>
+			<instruction>//Go TABLOCKDIR</instruction>
+			<instruction>Go HOMEDIR USEQUALKEYS</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+		<label>&amp;Go to Locked Folder</label>
+		<tip>Navigate to the locked home path of this tab</tip>
+		<icon1>#formatlock</icon1>
+		<function type="normal">
+			<instruction>Go TABLOCKDIR</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>Copy All Tab Pat&amp;hs</label>
+		<icon1>#clipcopy</icon1>
+		<function type="script">
+			<instruction>@script JScript</instruction>
+			<instruction>function OnClick(clickData)</instruction>
+			<instruction>{</instruction>
+			<instruction>	var lister = clickData.func.sourcetab.lister;</instruction>
+			<instruction>	var fsu = DOpus.FSUtil;</instruction>
+			<instruction>	var clip = &quot;&quot;;</instruction>
+			<instruction>	for (var eTabs = new Enumerator(lister.tabs); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+			<instruction>	{</instruction>
+			<instruction>		var path = fsu.Resolve(eTabs.item().path);</instruction>
+			<instruction>		clip += path + &quot;\n&quot;;</instruction>
+			<instruction>	}</instruction>
+			<instruction>	DOpus.SetClip(clip);</instruction>
+			<instruction>}</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+		<label>Create Shortcuts for All Tabs</label>
+		<tip>Create shortcuts in destination for all folder tabs in the source pane</tip>
+		<icon1>#clippasteshortcut</icon1>
+		<function type="script">
+			<instruction>@script JScript</instruction>
+			<instruction>function OnClick(clickData)</instruction>
+			<instruction>{</instruction>
+			<instruction>	var cmd = clickData.func.command;</instruction>
+			<instruction>	cmd.deselect = false;</instruction>
+			<instruction>	var fsu = DOpus.FSUtil;</instruction>
+			<instruction>	var lister = clickData.func.sourcetab.lister;</instruction>
+			<instruction>	var tabs = lister.tabsleft;</instruction>
+			<instruction>	if (clickData.func.sourcetab.right) </instruction>
+			<instruction>		tabs = lister.tabsright;</instruction>
+			<instruction>	</instruction>
+			<instruction>	//dopusrt /info /desktop\pathlist.txt,paths</instruction>
+			<instruction>	//Copy C:\123 MAKELINK TO /desktop</instruction>
+			<instruction>	for (var eTabs = new Enumerator(tabs); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+			<instruction>	{</instruction>
+			<instruction>		var path = fsu.Resolve(eTabs.item().path);</instruction>
+			<instruction>		cmd.AddLine(&apos;Copy &quot;&apos;+path+&apos;&quot; MAKELINK WHENEXISTS=skip&apos;);</instruction>
+			<instruction>	}</instruction>
+			<instruction>	cmd.Run;</instruction>
+			<instruction>}</instruction>
+		</function>
+	</button>
+</button>

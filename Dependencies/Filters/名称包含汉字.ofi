@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<filter desc="名称包含汉字" name="名称包含汉字">
+	<clause match="yes" regex="yes" type="name">.*[\u4e00-\u9fff]+.*</clause>
+</filter>

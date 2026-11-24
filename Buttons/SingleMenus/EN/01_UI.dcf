@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<button version="13.0" backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+	<label>&amp;UI</label>
+	<icon1>#newmenu</icon1>
+	<button backcol="none" display="both" label_pos="right" textcol="none" type="three_button">
+		<label>&amp;Background [LMB: Green / RMB: Gray]</label>
+		<icon1>#default:godesktop</icon1>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>&amp;Green Tint</label>
+			<tip>Apply green background tint</tip>
+			<icon1>#default:godesktop</icon1>
+			<function type="normal">
+				<instruction>Set GRIDLINESH &quot;reset,toggle,fill,color=#D1DBD0,opacity=255&quot;</instruction>
+				<instruction>Set BACKGROUNDIMAGE=filedisplay: BACKGROUNDIMAGEOPTS=fillcolor:#E7F8E9</instruction>
+				<instruction>Set BACKGROUNDIMAGE=tree: BACKGROUNDIMAGEOPTS=fillcolor:#E7F8E9</instruction>
+				<instruction>// Set BACKGROUNDIMAGE=tree: BACKGROUNDIMAGEOPTS=fillcolor:#CCEDC7</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>G&amp;ray Tint</label>
+			<tip>Apply gray background tint</tip>
+			<icon1>#default:godesktop</icon1>
+			<function type="normal">
+				<instruction>Set GRIDLINESH &quot;reset,toggle,fill,color=#E1E1E1,opacity=255&quot;</instruction>
+				<instruction>Set BACKGROUNDIMAGE=filedisplay: BACKGROUNDIMAGEOPTS=fillcolor:#F5F5F5</instruction>
+				<instruction>Set BACKGROUNDIMAGE=tree: BACKGROUNDIMAGEOPTS=fillcolor:#E7F8E9</instruction>
+			</function>
+		</button>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>R&amp;elative Size Graphs</label>
+		<icon1>#default:getsizes</icon1>
+		<function type="normal">
+			<instruction>Set RELATIVESIZEGRAPHS=toggle</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>&amp;Relative Date Graphs</label>
+		<icon1>#default:recentlist</icon1>
+		<function type="normal">
+			<instruction>Set RELATIVEDATEGRAPHS=toggle</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>&amp;Show Friendly Dates</label>
+		<icon1>#default:setdate</icon1>
+		<function type="normal">
+			<instruction>Set FRIENDLYDATES=toggle,normal</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>E&amp;nable Label Assignments</label>
+		<icon1>#default:setcolor</icon1>
+		<function type="normal">
+			<instruction>Set ENABLELABELFILTER toggle,三天内修改</instruction>
+			<instruction>Set ENABLELABELFILTER toggle,空文件夹</instruction>
+			<instruction>Set ENABLELABELFILTER toggle,程序文件</instruction>
+			<instruction>Set ENABLELABELFILTER toggle,图片</instruction>
+			<instruction>Set ENABLELABELFILTER toggle,音视频</instruction>
+			<instruction>Set ENABLELABELFILTER toggle,压缩文件</instruction>
+			<instruction>Set ENABLELABELFILTER toggle,文档</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+		<label>&amp;Full-Row Selection</label>
+		<icon1>#default:fullrowselection</icon1>
+		<function type="normal">
+			<instruction>Set FULLROWSELECT=Toggle,NameCol</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>&amp;Horizontal Grid Lines</label>
+		<tip>Changes current file display only without modifying Preferences</tip>
+		<icon1>#default:gridlines</icon1>
+		<function type="normal">
+			<instruction>Set GRIDLINESH=toggle</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>&amp;Vertical Grid Lines</label>
+		<tip>Details and Power modes only\nChanges current file display only without modifying Preferences</tip>
+		<icon1>#default:sortby</icon1>
+		<function type="normal">
+			<instruction>// GRIDLINESH 样式参数 solid实线, alternate抖动线, dot点状线, dash虚线, dashdot虚线+点, dashdotdot虚线+两点</instruction>
+			<instruction>// Set GRIDLINESV &quot;toggle,solid,color=#808080,opacity=80&quot;</instruction>
+			<instruction>Set GRIDLINESV &quot;toggle,dash,color=#EE6666,opacity=255&quot;</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none">
+		<label>&amp;Toggle [Created + Modified] Age</label>
+		<tip>Changes current file display only without modifying Preferences</tip>
+		<icon1>#default:flatview</icon1>
+		<function type="normal">
+			<instruction>SET COLUMNSTOGGLE=&quot;scp:FileAge/Modify(4)&quot;</instruction>
+			<instruction>SET COLUMNSTOGGLE=&quot;scp:FileAge/Create(4)&quot;</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+		<label>S&amp;ort by [Name Length]</label>
+		<tip>Changes current file display only without modifying Preferences</tip>
+		<icon1>#default:flatview</icon1>
+		<function type="normal">
+			<instruction>Set COLUMNSTOGGLE=eval:namelength(!,80)</instruction>
+			<instruction>Set SORTBY=eval:namelength SORTREVERSE=togglesmart</instruction>
+		</function>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none" type="three_button">
+		<label>To&amp;ggle [Flat View + Group by Type]</label>
+		<icon1>#default:folderformatslist</icon1>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>To&amp;ggle [Flat View + Group by Type]</label>
+			<tip>Toggle on/off</tip>
+			<icon1>#default:folderformatslist</icon1>
+			<function type="normal">
+				<instruction>@nodeselect </instruction>
+				<instruction>@if:Set FLATVIEW=off</instruction>
+				<instruction>Set FLATVIEW=mixed</instruction>
+				<instruction>Set GROUPBY=&quot;extdir&quot; GROUPFOLDERSATTOP=on</instruction>
+				<instruction>Go GROUPCOLLAPSE=*</instruction>
+				<instruction>@if:else</instruction>
+				<instruction>Set FLATVIEW=off</instruction>
+				<instruction>Set GROUPBY=off</instruction>
+				<instruction>Set COLUMNSADD=Index(0,a)</instruction>
+				<instruction>SET COLUMNSFREEZE=1</instruction>
+				<instruction>Set COLUMNSREMOVE=&quot;pathrel&quot;</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>&amp;Collapse/Expand All Groups</label>
+			<icon1>#default:groupby</icon1>
+			<function type="normal">
+				<instruction>@if:enabled Go GROUPCOLLAPSE=*</instruction>
+				<instruction>GO GROUPCOLLAPSE=*</instruction>
+				<instruction>@if:else</instruction>
+				<instruction>GO GROUPEXPAND=*</instruction>
+			</function>
+		</button>
+	</button>
+	<button backcol="none" display="both" label_pos="right" textcol="none" type="three_button">
+		<label>Togg&amp;le [Flat View + Group by Comment]</label>
+		<icon1>#default:folderformatslist</icon1>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>Togg&amp;le [Flat View + Group by Comment]</label>
+			<tip>Toggle on/off</tip>
+			<icon1>#default:folderformatslist</icon1>
+			<function type="normal">
+				<instruction>@nodeselect </instruction>
+				<instruction>@if:Set FLATVIEW=off</instruction>
+				<instruction>Set FLATVIEW=mixed</instruction>
+				<instruction>Set GROUPBY=&quot;comments&quot; GROUPFOLDERSATTOP=on</instruction>
+				<instruction>Set GROUPCOMBINE=never</instruction>
+				<instruction>Go GROUPCOLLAPSE=*</instruction>
+				<instruction>@if:else</instruction>
+				<instruction>Set FLATVIEW=off</instruction>
+				<instruction>Set GROUPBY=off</instruction>
+				<instruction>Set COLUMNSADD=Index(0,a)</instruction>
+				<instruction>SET COLUMNSFREEZE=1</instruction>
+				<instruction>Set COLUMNSREMOVE=&quot;pathrel&quot;</instruction>
+			</function>
+		</button>
+		<button backcol="none" display="both" label_pos="right" textcol="none">
+			<label>&amp;Collapse/Expand All Groups</label>
+			<icon1>#default:groupby</icon1>
+			<function type="normal">
+				<instruction>@if:enabled Go GROUPCOLLAPSE=*</instruction>
+				<instruction>GO GROUPCOLLAPSE=*</instruction>
+				<instruction>@if:else</instruction>
+				<instruction>GO GROUPEXPAND=*</instruction>
+			</function>
+		</button>
+	</button>
+</button>

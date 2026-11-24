@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<filter desc="类型 除视频之外全部" name="类型 除视频之外全部">
+	<clause match="no" type="name" wildcards="yes">*.(3gp|asf|avi|flv|m1v|m2ts|m2v|m4v|mkv|mov|mp4|mpe|mpeg|mpg|rm|rmvb|ts|vob|webm|wmv)</clause>
+</filter>

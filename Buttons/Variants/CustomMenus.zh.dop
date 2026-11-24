@@ -1,0 +1,2646 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<toolbar>
+	<image_settings fill="none" fit="0x408" image="" inheritable="yes" opacity="100" use_custom="no" />
+	<buttons backcol="none" display="label" textcol="none" type="menu">
+<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+			<label>界面(&amp;U)</label>
+			<icon1>#newmenu</icon1>
+			<button backcol="none" display="both" label_pos="right" textcol="none" type="three_button">
+				<label>背景[左键绿底/右键灰底]</label>
+				<icon1>#default:godesktop</icon1>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>绿底</label>
+					<tip>绿底</tip>
+					<icon1>#default:godesktop</icon1>
+					<function type="normal">
+						<instruction>Set GRIDLINESH &quot;reset,toggle,fill,color=#D1DBD0,opacity=255&quot;</instruction>
+						<instruction>Set BACKGROUNDIMAGE=filedisplay: BACKGROUNDIMAGEOPTS=fillcolor:#E7F8E9</instruction>
+						<instruction>Set BACKGROUNDIMAGE=tree: BACKGROUNDIMAGEOPTS=fillcolor:#E7F8E9</instruction>
+						<instruction>// Set BACKGROUNDIMAGE=tree: BACKGROUNDIMAGEOPTS=fillcolor:#CCEDC7</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>灰底</label>
+					<tip>灰底</tip>
+					<icon1>#default:godesktop</icon1>
+					<function type="normal">
+						<instruction>Set GRIDLINESH &quot;reset,toggle,fill,color=#E1E1E1,opacity=255&quot;</instruction>
+						<instruction>Set BACKGROUNDIMAGE=filedisplay: BACKGROUNDIMAGEOPTS=fillcolor:#F5F5F5</instruction>
+						<instruction>Set BACKGROUNDIMAGE=tree: BACKGROUNDIMAGEOPTS=fillcolor:#E7F8E9</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>启用大小相对图形</label>
+				<icon1>#default:getsizes</icon1>
+				<function type="normal">
+					<instruction>Set RELATIVESIZEGRAPHS=toggle</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>启用日期相对图形</label>
+				<icon1>#default:recentlist</icon1>
+				<function type="normal">
+					<instruction>Set RELATIVEDATEGRAPHS=toggle</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>显示友好日期</label>
+				<icon1>#default:setdate</icon1>
+				<function type="normal">
+					<instruction>Set FRIENDLYDATES=toggle,normal</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>启用标记分配</label>
+				<icon1>#default:setcolor</icon1>
+				<function type="normal">
+					<instruction>Set ENABLELABELFILTER toggle,三天内修改</instruction>
+					<instruction>Set ENABLELABELFILTER toggle,空文件夹</instruction>
+					<instruction>Set ENABLELABELFILTER toggle,程序文件</instruction>
+					<instruction>Set ENABLELABELFILTER toggle,图片</instruction>
+					<instruction>Set ENABLELABELFILTER toggle,音视频</instruction>
+					<instruction>Set ENABLELABELFILTER toggle,压缩文件</instruction>
+					<instruction>Set ENABLELABELFILTER toggle,文档</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+				<label>&amp;Full-Row Selection</label>
+				<icon1>#default:fullrowselection</icon1>
+				<function type="normal">
+					<instruction>Set FULLROWSELECT=Toggle,NameCol</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>启用网格换行</label>
+				<tip>仅改变当前显示窗口，不修改首选项配置</tip>
+				<icon1>#default:gridlines</icon1>
+				<function type="normal">
+					<instruction>Set GRIDLINESH=toggle</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>启用纵列网格线</label>
+				<tip>仅对详情和增强模式有效\n仅改变当前显示窗口，不修改首选项配置</tip>
+				<icon1>#default:sortby</icon1>
+				<function type="normal">
+					<instruction>// GRIDLINESH 样式参数 solid实线, alternate抖动线, dot点状线, dash虚线, dashdot虚线+点, dashdotdot虚线+两点</instruction>
+					<instruction>// Set GRIDLINESV &quot;toggle,solid,color=#808080,opacity=80&quot;</instruction>
+					<instruction>Set GRIDLINESV &quot;toggle,dash,color=#EE6666,opacity=255&quot;</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>启用[创建+修改]距今</label>
+				<tip>仅改变当前显示窗口，不修改首选项配置</tip>
+				<icon1>#default:flatview</icon1>
+				<function type="normal">
+					<instruction>SET COLUMNSTOGGLE=&quot;scp:FileAge/Modify(4)&quot;</instruction>
+					<instruction>SET COLUMNSTOGGLE=&quot;scp:FileAge/Create(4)&quot;</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+				<label>启用[名称长度]排序</label>
+				<tip>仅改变当前显示窗口，不修改首选项配置</tip>
+				<icon1>#default:flatview</icon1>
+				<function type="normal">
+					<instruction>Set COLUMNSTOGGLE=eval:namelength(!,80)</instruction>
+					<instruction>Set SORTBY=eval:namelength SORTREVERSE=togglesmart</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none" type="three_button">
+				<label>切换[平面显示+按类型分组]</label>
+				<icon1>#default:folderformatslist</icon1>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>切换[平面显示+按类型分组]</label>
+					<tip>切换开关</tip>
+					<icon1>#default:folderformatslist</icon1>
+					<function type="normal">
+						<instruction>@nodeselect </instruction>
+						<instruction>@if:Set FLATVIEW=off</instruction>
+						<instruction>Set FLATVIEW=mixed</instruction>
+						<instruction>Set GROUPBY=&quot;extdir&quot; GROUPFOLDERSATTOP=on</instruction>
+						<instruction>Go GROUPCOLLAPSE=*</instruction>
+						<instruction>@if:else</instruction>
+						<instruction>Set FLATVIEW=off</instruction>
+						<instruction>Set GROUPBY=off</instruction>
+						<instruction>Set COLUMNSADD=Index(0,a)</instruction>
+						<instruction>SET COLUMNSFREEZE=1</instruction>
+						<instruction>Set COLUMNSREMOVE=&quot;pathrel&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>折叠/展开所有组</label>
+					<icon1>#default:groupby</icon1>
+					<function type="normal">
+						<instruction>@if:enabled Go GROUPCOLLAPSE=*</instruction>
+						<instruction>GO GROUPCOLLAPSE=*</instruction>
+						<instruction>@if:else</instruction>
+						<instruction>GO GROUPEXPAND=*</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none" type="three_button">
+				<label>切换[平面显示+按注释分组]</label>
+				<icon1>#default:folderformatslist</icon1>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>切换[平面显示+按注释分组]</label>
+					<tip>切换开关</tip>
+					<icon1>#default:folderformatslist</icon1>
+					<function type="normal">
+						<instruction>@nodeselect </instruction>
+						<instruction>@if:Set FLATVIEW=off</instruction>
+						<instruction>Set FLATVIEW=mixed</instruction>
+						<instruction>Set GROUPBY=&quot;comments&quot; GROUPFOLDERSATTOP=on</instruction>
+						<instruction>Set GROUPCOMBINE=never</instruction>
+						<instruction>Go GROUPCOLLAPSE=*</instruction>
+						<instruction>@if:else</instruction>
+						<instruction>Set FLATVIEW=off</instruction>
+						<instruction>Set GROUPBY=off</instruction>
+						<instruction>Set COLUMNSADD=Index(0,a)</instruction>
+						<instruction>SET COLUMNSFREEZE=1</instruction>
+						<instruction>Set COLUMNSREMOVE=&quot;pathrel&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>折叠/展开所有组</label>
+					<icon1>#default:groupby</icon1>
+					<function type="normal">
+						<instruction>@if:enabled Go GROUPCOLLAPSE=*</instruction>
+						<instruction>GO GROUPCOLLAPSE=*</instruction>
+						<instruction>@if:else</instruction>
+						<instruction>GO GROUPEXPAND=*</instruction>
+					</function>
+				</button>
+			</button>
+		</button>
+<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+			<label>标签(&amp;B)</label>
+			<hotkeys>
+				<chord>
+					<key disable="yes">ctrl+shift+M</key>
+					<key>T</key>
+				</chord>
+			</hotkeys>
+			<icon1>#foldertabs</icon1>
+			<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+				<label>标签位置</label>
+				<icon1>#foldertabgrouplist</icon1>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>标签位置</label>
+					<tip>重置为选项中设置的标签位置</tip>
+					<icon1>#foldertabgrouplist</icon1>
+					<function type="normal">
+						<instruction>Set TABPOSITION=reset</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>纵列相近</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction> Set TABPOSITION=left,together</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>横行相近</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction> Set TABPOSITION=above,together</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>居上</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>Set TABPOSITION=above</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>居下</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>Set TABPOSITION=below</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>居左</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>Set TABPOSITION=left </instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>居右</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>Set TABPOSITION=right</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>相近</label>
+					<tip>双栏时，两边的标签栏靠近在一起</tip>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>Set TABPOSITION=together</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>相远</label>
+					<tip>双栏时，两边的标签栏远离到两端</tip>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>Set TABPOSITION=apart</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>设置标签宽度为120</label>
+					<tip>仅当标签栏位于左/右方才有效，位于上/下方无效</tip>
+					<icon1>#foldertabs</icon1>
+					<function type="normal">
+						<instruction>Set TABWIDTH=120</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>首选项标签设置</label>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>//Prefs PAGE=foldertabs</instruction>
+						<instruction>Prefs PAGE=&quot;foldertabbars&quot;</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>在新标签中打开路径</label>
+				<tip>若未选择，则在新标签中打开当前路径\n若选中软链接，则在新标签中打开其目标\n若有选中文件夹，则在新标签中打开之\n若只选中文件且含有快捷方式(.lnk)，则打开其目标\n未选中.lnk，则在新标签中打开当前路径</tip>
+				<hotkeys>
+					<key disable="yes">ctrl+T</key>
+				</hotkeys>
+				<icon1>#newtab</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>//为选定文件夹新建标签</instruction>
+					<instruction>//Go NEWTAB=nofocus,findexisting FROMSEL</instruction>
+					<instruction />
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	//DOpus.ClearOutput();</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	cmd.deselect = false;</instruction>
+					<instruction>	var Mycmd = &quot;Go CURRENT NEWTAB&quot;;</instruction>
+					<instruction>	var stab = clickData.func.sourcetab;</instruction>
+					<instruction>	//if (stab.path.drive == 0 &amp;&amp; stab.selected.count &gt; 0)</instruction>
+					<instruction>	//Mycmd = &quot;Go OPENCONTAINER NEWTAB=findexisting&quot;;</instruction>
+					<instruction>	var sels = stab.selected;</instruction>
+					<instruction>	if(sels.count &gt; 0){</instruction>
+					<instruction>		if(sels(0).is_junction || sels(0).is_symlink || sels(0).ext == &quot;.lnk&quot; || //第一个选中项若是指向性的，则打开其目标位置</instruction>
+					<instruction>			(!sels(0).is_dir &amp;&amp; DOpus.FSUtil.PathType(stab.path) == &quot;coll&quot;) ){ //在文件收集中，若选中第一项是文件则打开其父目录</instruction>
+					<instruction>			Mycmd = &quot;Go opencontainer=target NEWTAB=findexisting,tofront&quot;;</instruction>
+					<instruction>		} else {</instruction>
+					<instruction>			if (stab.selected_dirs.count &gt; 0)</instruction>
+					<instruction>				Mycmd = &quot;Go NEWTAB=nofocus,findexisting FROMSEL&quot;;//若选中了文件夹，则在新标签中打开文件夹</instruction>
+					<instruction>			else //if (stab.selected_files.count &gt; 0)</instruction>
+					<instruction>			{//未选中文件夹，只选中文件时，遍历判断是否包含.lnk快捷方式</instruction>
+					<instruction>				for (var eSel = new Enumerator(stab.selected); !eSel.atEnd(); eSel.moveNext())</instruction>
+					<instruction>				{</instruction>
+					<instruction>					if (eSel.item().ext == &quot;.lnk&quot;)</instruction>
+					<instruction>					{</instruction>
+					<instruction>						Mycmd = &quot;Go opencontainer=target NEWTAB=findexisting,tofront&quot;;//打开快捷方式的目标位置</instruction>
+					<instruction>						break;</instruction>
+					<instruction>					}</instruction>
+					<instruction>				}</instruction>
+					<instruction>			}</instruction>
+					<instruction>		}</instruction>
+					<instruction>	}</instruction>
+					<instruction>	cmd.RunCommand(Mycmd);</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="alt+T" hotkey_label="yes" textcol="none">
+				<label>打开选定文件夹到目标栏</label>
+				<tip>若未选择，则在目标栏中打开当前路径\n若有选中文件夹，则在目标兰中打开之\n若只选中文件且选中项有快捷方式(.lnk)，则打开其指向的目标\n</tip>
+				<icon1>#getsizes</icon1>
+				<function type="script">
+					<instruction />
+					<instruction>@script JScript</instruction>
+					<instruction>/*function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	cmd.deselect = false; // Prevent automatic deselection</instruction>
+					<instruction>	if(clickData.func.sourcetab.selected_dirs.count == 0)</instruction>
+					<instruction>	cmd.RunCommand(&quot;go current newtab=deflister,findexisting openindual&quot;);</instruction>
+					<instruction>	else</instruction>
+					<instruction>	cmd.RunCommand(&quot;go fromsel newtab=deflister,findexisting openindual&quot;);</instruction>
+					<instruction>}</instruction>
+					<instruction>*/</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	//DOpus.ClearOutput();</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	cmd.deselect = false; // Prevent automatic deselection</instruction>
+					<instruction>	var Mycmd = &quot;Go CURRENT NEWTAB=deflister,findexisting openindual&quot;;</instruction>
+					<instruction>	var stab = clickData.func.sourcetab;</instruction>
+					<instruction>	//if (stab.path.drive == 0 &amp;&amp; stab.selected.count &gt; 0)</instruction>
+					<instruction>	//Mycmd = &quot;Go OPENCONTAINER NEWTAB=deflister,findexisting openindual&quot;;</instruction>
+					<instruction>		if (stab.selected_dirs.count &gt; 0)</instruction>
+					<instruction>		Mycmd = &quot;go fromsel newtab=deflister,findexisting openindual&quot;;</instruction>
+					<instruction>		else if (stab.selected_files.count &gt; 0)</instruction>
+					<instruction>		{</instruction>
+					<instruction>			for (var eSel = new Enumerator(stab.selected); !eSel.atEnd(); eSel.moveNext())</instruction>
+					<instruction>			{</instruction>
+					<instruction>				if (eSel.item().ext == &quot;.lnk&quot;)</instruction>
+					<instruction>				{</instruction>
+					<instruction>					DOpus.Output(eSel.item().ext);</instruction>
+					<instruction>					Mycmd = &quot;go opencontainer=target newtab=deflister,findexisting,tofront openindual&quot;;</instruction>
+					<instruction>					break;</instruction>
+					<instruction>				}</instruction>
+					<instruction>			}</instruction>
+					<instruction>		}</instruction>
+					<instruction>	cmd.RunCommand(Mycmd);</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="alt+Y" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>移动标签到目标栏(&amp;Y)</label>
+				<tip>仅有一个标签时，复制当前标签到目标栏；否则移动标签到目标栏</tip>
+				<icon1>#syncpane1</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	cmd.deselect = false;</instruction>
+					<instruction>	var vlis = clickData.func.sourcetab.lister;</instruction>
+					<instruction>	//if(vlis.dual != 0 || clickData.func.tabs &gt; 1){</instruction>
+					<instruction>	if(vlis.tabs.count == 1)</instruction>
+					<instruction>		cmd.RunCommand(&quot;Go CURRENT NEWTAB=deflister,findexisting openindual&quot;);</instruction>
+					<instruction>	else</instruction>
+					<instruction>		cmd.RunCommand(&quot;Go TABMOVE=active&quot;);</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="186,4" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>从当前标签拆分为双栏(&amp;F)</label>
+				<tip>仅当单栏时，将当前标签及其后标签全部拆分到双栏另一边</tip>
+				<icon1>#syncpane1</icon1>
+				<function type="normal">
+					<instruction>Go TABMOVE=split</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="ctrl+shift+Y" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>双栏时合并所有标签到单栏</label>
+				<icon1>#syncpane1</icon1>
+				<function type="script">
+					<instruction>//@hideif:!Set DUAL=toggle</instruction>
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	cmd.deselect = false;</instruction>
+					<instruction>	var sTab = clickData.func.sourcetab</instruction>
+					<instruction>	var lis = sTab.lister;</instruction>
+					<instruction>	if(lis.dual==0) return;</instruction>
+					<instruction />
+					<instruction>	var sumleft = lis.tabsleft.count, sumright = lis.tabsright.count;</instruction>
+					<instruction>	var l_r = &quot;right&quot;, sum = sumright, selectN = &quot;first&quot;, side = &quot; OPENINRIGHT&quot;, tabN = &quot;&quot;;</instruction>
+					<instruction>	if(sumleft &lt; sumright){</instruction>
+					<instruction>		l_r = &quot;left&quot;; sum = sumleft; selectN = &quot;last&quot;; side = &quot; OPENINLEFT&quot;; tabN = &quot;=0&quot;;</instruction>
+					<instruction>	}</instruction>
+					<instruction />
+					<instruction>	//if(sTab.right){</instruction>
+					<instruction>	for(var i=0; i&lt;sum; i++)</instruction>
+					<instruction>		{</instruction>
+					<instruction>			cmd.RunCommand(&apos;Set FOCUS=&apos;+l_r);</instruction>
+					<instruction>			cmd.RunCommand(&apos;Go TABSELECT=&apos;+selectN+side);</instruction>
+					<instruction>			lis.Update()</instruction>
+					<instruction>			//log(lis.activetab.path)</instruction>
+					<instruction>			cmd.SetSourceTab(lis.activetab);</instruction>
+					<instruction>			cmd.RunCommand(&apos;Go TABMOVE&apos;+tabN);</instruction>
+					<instruction>			lis.Update()</instruction>
+					<instruction>			if(lis.dual==0) break;</instruction>
+					<instruction>		}</instruction>
+					<instruction>	</instruction>
+					<instruction>	/*</instruction>
+					<instruction>	var sTab = clickData.func.sourcetab</instruction>
+					<instruction>	var dTab = clickData.func.desttab</instruction>
+					<instruction>	var LTab, RTab</instruction>
+					<instruction>	if(sTab.right){</instruction>
+					<instruction>		LTab = dTab</instruction>
+					<instruction>		RTab = sTab</instruction>
+					<instruction>	} else {</instruction>
+					<instruction>		LTab = sTab</instruction>
+					<instruction>		RTab = dTab</instruction>
+					<instruction>	}</instruction>
+					<instruction>	*/</instruction>
+					<instruction>}</instruction>
+					<instruction />
+					<instruction>function log(str){DOpus.Output(str,false,true);}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="191,2" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>打开选定项的上级目录到目标栏</label>
+				<tip>在虚拟路径、查找结果或文件收集中比较有用\nShift+双击文件名称(在文件类型中定义的动作)</tip>
+				<icon1>#getsizes</icon1>
+				<function type="normal">
+					<instruction>@nodeselect</instruction>
+					<instruction>//Go OPENCONTAINER NEWTAB=findexisting,nofocus</instruction>
+					<instruction>Go OPENCONTAINER OPENINDUAL NEWTAB</instruction>
+					<instruction>//SET DEST=FOCUS</instruction>
+					<instruction>//Set QUICKFILTERCLEAR</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>&amp;New Tab for Parent</label>
+				<tip>Open a new tab showing the parent folder</tip>
+				<icon1>#goupnewtab</icon1>
+				<function type="normal">
+					<instruction>Go UP NEWTAB</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" separate="yes" textcol="none">
+				<label>新建空标签(&amp;K)</label>
+				<tip>新建空标签并聚焦于地址栏</tip>
+				<icon1>#newtab</icon1>
+				<function type="normal">
+					<instruction>//Go NEWTAB TABPOS=+1</instruction>
+					<instruction>Go NEWTAB TABPOS=last</instruction>
+					<instruction>Set FOCUS=pathfield</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+				<label>关闭标签(&amp;C)</label>
+				<icon1>#closetab</icon1>
+				<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+					<label>&amp;Close Tab</label>
+					<tip>Close the current Folder Tab</tip>
+					<hotkeys>
+						<key disable="yes">ctrl+W</key>
+						<key disable="yes">ctrl+f4</key>
+					</hotkeys>
+					<icon1>#closetab</icon1>
+					<function type="normal">
+						<instruction>Go TABCLOSE</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>关闭左侧标签</label>
+					<hotkeys>
+						<key disable="yes">ctrl+shift+W</key>
+					</hotkeys>
+					<icon1>#closelister</icon1>
+					<function type="normal">
+						<instruction>Go TABCLOSEALL=left</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>关闭右侧标签\t</label>
+					<icon1>#closelister</icon1>
+					<function type="normal">
+						<instruction>Go TABCLOSEALL=right</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>关闭其他标签</label>
+					<tip>仅保留当前标签</tip>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>escape</key>
+						</chord>
+					</hotkeys>
+					<icon1>#closelister</icon1>
+					<function type="normal">
+						<instruction>Go TABCLOSEALL</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>关闭重复标签(&amp;D)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>space</key>
+						</chord>
+					</hotkeys>
+					<icon1>#closetab</icon1>
+					<function type="script">
+						<instruction>@script JScript</instruction>
+						<instruction>function OnClick(clickData)</instruction>
+						<instruction>{</instruction>
+						<instruction>	var cmd = clickData.func.command;</instruction>
+						<instruction>	cmd.deselect = false;</instruction>
+						<instruction>	cmd.ClearFiles();</instruction>
+						<instruction />
+						<instruction>	var lister = clickData.func.sourcetab.lister;</instruction>
+						<instruction>	closeDuplicateTabs(cmd, lister.tabsleft);</instruction>
+						<instruction>	closeDuplicateTabs(cmd, lister.tabsright);</instruction>
+						<instruction>}</instruction>
+						<instruction />
+						<instruction>function closeDuplicateTabs(cmd, tabList)</instruction>
+						<instruction>{</instruction>
+						<instruction>	var mapPaths = DOpus.Create.Map();</instruction>
+						<instruction>	var vecTabsToClose = DOpus.Create.Vector();</instruction>
+						<instruction>	var tabIndex = 0;</instruction>
+						<instruction />
+						<instruction>	for (var eTabs = new Enumerator(tabList); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+						<instruction>	{</instruction>
+						<instruction>		var tab = eTabs.item();</instruction>
+						<instruction>		var tabPath = tab.path;</instruction>
+						<instruction>		</instruction>
+						<instruction>		if (mapPaths.exists(tabPath))</instruction>
+						<instruction>		{</instruction>
+						<instruction>			vecTabsToClose.push_back(tab);</instruction>
+						<instruction>			if (tab.visible)</instruction>
+						<instruction>			{</instruction>
+						<instruction>				cmd.RunCommand(&quot;Go TABSELECT=&quot; + mapPaths(tabPath));</instruction>
+						<instruction>			}</instruction>
+						<instruction>		}</instruction>
+						<instruction>		else</instruction>
+						<instruction>		{</instruction>
+						<instruction>			mapPaths(tabPath) = tabIndex;</instruction>
+						<instruction>		}</instruction>
+						<instruction>		</instruction>
+						<instruction>		tabIndex = tabIndex + 1;</instruction>
+						<instruction>	}</instruction>
+						<instruction />
+						<instruction>	if (vecTabsToClose.empty)</instruction>
+						<instruction>		return;</instruction>
+						<instruction />
+						<instruction>	cmd.Clear();</instruction>
+						<instruction />
+						<instruction>	for (var eTabs = new Enumerator(vecTabsToClose); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+						<instruction>	{</instruction>
+						<instruction>		var tab = eTabs.item();</instruction>
+						<instruction>		if (tab.lock == &quot;off&quot;)</instruction>
+						<instruction>			cmd.AddLine(&quot;Go TABCLOSE=&quot; + tab);</instruction>
+						<instruction>	}</instruction>
+						<instruction />
+						<instruction>	cmd.Run();</instruction>
+						<instruction>	cmd.Clear();</instruction>
+						<instruction>}</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>关闭含有 C: 标签</label>
+					<tip>关闭所有打开C: 路径的标签</tip>
+					<icon1>#closetab</icon1>
+					<function type="normal">
+						<instruction> Go TABCLOSE PATH=C:\*</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" separate="yes" textcol="none">
+				<label>恢复关闭的标签页</label>
+				<tip>重新打开上一个或多个已关闭的标签页</tip>
+				<hotkeys>
+					<key disable="yes">ctrl+shift+T</key>
+				</hotkeys>
+				<icon1>#undoclosetab</icon1>
+				<function type="normal">
+					<instruction>Go TABUNDOCLOSE</instruction>
+					<instruction>//TabRescue LAST</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none" type="menu_button">
+				<label>最近关闭的标签页(&amp;TabRescue)</label>
+				<tip>脚本: TabRescue，管理最近关闭的标签</tip>
+				<icon1>#undoclosetab</icon1>
+				<function type="normal">
+					<instruction>//https://resource.dopus.com/t/tabrescue-quickly-restore-your-closed-tabs/55768</instruction>
+					<instruction>//TabRescue LAST</instruction>
+					<instruction>TabRescue LIST</instruction>
+				</function>
+				<button backcol="none" display="label" textcol="none">
+					<label>清除历史关闭标签</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>TabRescue CLEAR</instruction>
+						<instruction />
+						<instruction>//暂停记录关闭的标签历史</instruction>
+						<instruction>//TabRescue TOGGLEPAUSE</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" hotkey="shift+tab" hotkey_label="yes" textcol="none">
+				<label>标签切换菜单(&amp;S)</label>
+				<tip>弹出标签列表菜单，Tab / Shift+Tab 可上下切换，空格激活不消失/回车激活后消失</tip>
+				<icon1>#foldertabgrouplist</icon1>
+				<function type="normal">
+					<instruction>Go TABSWITCHER</instruction>
+					<instruction>//Go TABLIST=keys</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+				<label>标签列表</label>
+				<hotkeys>
+					<chord>
+						<key>tab</key>
+						<key>Q</key>
+					</chord>
+				</hotkeys>
+				<icon1>#Program_Icos:55.Menu</icon1>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>标签列表</label>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABLIST=keys</instruction>
+						<instruction>//Go TABLIST=keys OPENINDEST</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" dropdown_glyph="yes" label_pos="right" textcol="none" type="menu">
+				<label>标签定位(&amp;A)</label>
+				<icon1>#newmenu</icon1>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>最右的标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>192,0</key>
+						</chord>
+					</hotkeys>
+					<icon1>#goupnewtab</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=last</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 1 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>1</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=first</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 2 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>2</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=1</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 3 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>3</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=2</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 4 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>4</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=3</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 5 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>5</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=4</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 6 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>6</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=5</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 7 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>7</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=6</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 8 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>8</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=7</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 9 个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>9</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=8</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" separate="yes" textcol="none">
+					<label>第10个标签</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>0</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=9</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>最右的标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num0</key>
+						</chord>
+					</hotkeys>
+					<icon1>#goupnewtab</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=last OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 1 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num1</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=first OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 2 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num2</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=1 OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 3 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num3</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=2 OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 4 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num4</key>
+						</chord>
+					</hotkeys>
+					<icon1>#default:empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=3 OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 5 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num5</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=4 OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 6 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num6</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=5 OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 7 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num7</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=6 OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 8 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num8</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=7 OPENINDEST</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+					<label>第 9 个标签(目标)</label>
+					<hotkeys>
+						<chord>
+							<key>tab</key>
+							<key>num9</key>
+						</chord>
+					</hotkeys>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>Go TABSELECT=8 OPENINDEST</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>上一个标签</label>
+				<tip>在当前栏中选择上一个标签</tip>
+				<hotkeys>
+					<key>ctrl+shift+tab</key>
+					<key disable="yes">ctrl+left</key>
+				</hotkeys>
+				<icon1>#copysourcedest_left</icon1>
+				<function type="normal">
+					<instruction>go tabselect -1</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>下一个标签</label>
+				<tip>在当前栏中选择下一个标签</tip>
+				<hotkeys>
+					<key>ctrl+tab</key>
+					<key disable="yes">ctrl+right</key>
+				</hotkeys>
+				<icon1>#copysourcedest_right</icon1>
+				<function type="normal">
+					<instruction>go tabselect +1</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="219,2" hotkey_label="yes" textcol="none">
+				<label>标签向左移</label>
+				<icon1>#goback</icon1>
+				<function type="normal">
+					<instruction>Go TABPOS=-1</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="221,2" hotkey_label="yes" textcol="none">
+				<label>标签向右移</label>
+				<icon1>#goforward</icon1>
+				<function type="normal">
+					<instruction>Go TABPOS=+1</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" separate="yes" textcol="none">
+				<label>最近两个标签之间切换</label>
+				<hotkeys>
+					<key>alt+Z</key>
+					<key>192,4</key>
+				</hotkeys>
+				<icon1>#syncpane</icon1>
+				<function type="normal">
+					<instruction>Go TABSELECT=prev</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+				<label>标签颜色</label>
+				<icon1>#setcolor</icon1>
+				<button backcol="#ff0000" display="label" label_pos="right" textcol="#000000">
+					<label>红色</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #ff0000</instruction>
+					</function>
+				</button>
+				<button backcol="#00ff00" display="label" label_pos="right" textcol="#000000">
+					<label>绿色</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #00ff00</instruction>
+					</function>
+				</button>
+				<button backcol="#0000ff" display="label" label_pos="right" textcol="none">
+					<label>蓝色</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #0000ff</instruction>
+					</function>
+				</button>
+				<button backcol="#ffff00" display="label" label_pos="right" textcol="#000000">
+					<label>黄色</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #ffff00</instruction>
+					</function>
+				</button>
+				<button backcol="#ff00ff" display="label" label_pos="right" textcol="#000000">
+					<label>紫色</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #ff00ff</instruction>
+					</function>
+				</button>
+				<button backcol="#00ffff" display="label" label_pos="right" textcol="#000000">
+					<label>天蓝</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #00ffff</instruction>
+					</function>
+				</button>
+				<button backcol="#98c400" display="label" label_pos="right" textcol="#000000">
+					<label>青黄</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #7ba000</instruction>
+					</function>
+				</button>
+				<button backcol="#ff8000" display="label" label_pos="right" textcol="#000000">
+					<label>橙色</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #ff8000</instruction>
+					</function>
+				</button>
+				<button backcol="#8d008d" display="label" label_pos="right" textcol="#ffffff">
+					<label>暗紫</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #8d008d</instruction>
+					</function>
+				</button>
+				<button backcol="#930000" display="label" label_pos="right" textcol="#ffffff">
+					<label>暗红</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #760000</instruction>
+					</function>
+				</button>
+				<button backcol="#005124" display="label" label_pos="right" textcol="#ffffff">
+					<label>暗绿</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #005124</instruction>
+					</function>
+				</button>
+				<button backcol="#001591" display="label" label_pos="right" textcol="#ffffff">
+					<label>暗蓝</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #001591</instruction>
+					</function>
+				</button>
+				<button backcol="#ffffff" display="label" label_pos="right" textcol="#000000">
+					<label>白色</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #FFFFFF</instruction>
+					</function>
+				</button>
+				<button backcol="#000000" display="label" label_pos="right" textcol="#ffffff">
+					<label>黑色</label>
+					<icon1>#setcolor</icon1>
+					<function type="normal">
+						<instruction>Go TABCOLOR #000000</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+				<label>清除标签颜色</label>
+				<icon1>#setcolor</icon1>
+				<function type="normal">
+					<instruction>Go TABCOLOR=reset</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>锁定标签(&amp;L)</label>
+				<hotkeys>
+					<chord>
+						<key>tab</key>
+						<key>capslock</key>
+					</chord>
+				</hotkeys>
+				<icon1>#formatlock</icon1>
+				<function type="normal">
+					<instruction>//锁定</instruction>
+					<instruction>//Go TABLOCK=lock,toggle</instruction>
+					<instruction>//锁定(重用未锁定的标签页)</instruction>
+					<instruction>//Go TABLOCK=lockreuse,toggle</instruction>
+					<instruction>//锁定(允许改变路径)  [选项/文件夹标签页/锁定] 可取消勾选【激活另一个标签页时重置（在允许文件夹更改模式下）】</instruction>
+					<instruction>Go TABLOCK=lockchanges,toggle</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>链接标签</label>
+				<hotkeys>
+					<chord>
+						<key>tab</key>
+						<key>L</key>
+					</chord>
+				</hotkeys>
+				<icon1>#Windows_icos_plus:37.Link Paths</icon1>
+				<function type="normal">
+					<instruction>Go TABLINK=toggle</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>切换来源/目标栏</label>
+				<icon1>#swapsourcedest</icon1>
+				<function type="normal">
+					<instruction>@if:set dual=off</instruction>
+					<instruction>Set DUAL=toggle,remember</instruction>
+					<instruction>@if:else</instruction>
+					<instruction>Set FOCUS=dest</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>交换双栏中当前标签</label>
+				<hotkeys>
+					<chord>
+						<key>tab</key>
+						<key>X</key>
+					</chord>
+				</hotkeys>
+				<icon1>#Program_Icos:54.Swap tabs</icon1>
+				<function type="normal">
+					<instruction>@disableif:set dual=off</instruction>
+					<instruction>Go TABSWAP</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="ctrl+alt+X" hotkey_label="yes" textcol="none">
+				<label>交换双栏</label>
+				<tip>交换双栏</tip>
+				<icon1>#swapsourcedest_horiz</icon1>
+				<function type="normal">
+					<instruction>@icon:swapsourcedest_vert,Set dual=horiz</instruction>
+					<instruction>@disableif:set dual=off</instruction>
+					<instruction>Go SWAP</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" separate="yes" textcol="none">
+				<label>标签排序</label>
+				<tip>Sort Tabs</tip>
+				<hotkeys>
+					<chord>
+						<key>tab</key>
+						<key>S</key>
+					</chord>
+				</hotkeys>
+				<icon1>#sortby</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	cmd.deselect = false; // Prevent automatic deselection</instruction>
+					<instruction>	cmd.ClearFiles();</instruction>
+					<instruction />
+					<instruction>	sortTabs(cmd, clickData.func.sourcetab.lister.tabsleft);</instruction>
+					<instruction>	sortTabs(cmd, clickData.func.sourcetab.lister.tabsright);</instruction>
+					<instruction>}</instruction>
+					<instruction />
+					<instruction>function sortTabs(cmd, tabList)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var setLabels = DOpus.Create.StringSet();</instruction>
+					<instruction>	var mapLabelToTabVec = DOpus.Create.Map();</instruction>
+					<instruction />
+					<instruction>	for (var eTabs = new Enumerator(tabList); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+					<instruction>	{</instruction>
+					<instruction>		var tab = eTabs.item();</instruction>
+					<instruction>		var label = tab.displayed_label.toLowerCase();</instruction>
+					<instruction />
+					<instruction>		setLabels.insert(label);</instruction>
+					<instruction />
+					<instruction>		if (!mapLabelToTabVec.exists(label))</instruction>
+					<instruction>		{</instruction>
+					<instruction>			mapLabelToTabVec(label) = DOpus.Create.Vector();</instruction>
+					<instruction>		}</instruction>
+					<instruction>		mapLabelToTabVec(label).push_back(tab);</instruction>
+					<instruction>	}</instruction>
+					<instruction />
+					<instruction>	var vecLabels = DOpus.Create.Vector();</instruction>
+					<instruction />
+					<instruction>	for (var eLabels = new Enumerator(setLabels); !eLabels.atEnd(); eLabels.moveNext())</instruction>
+					<instruction>	{</instruction>
+					<instruction>		vecLabels.push_back(eLabels.item());</instruction>
+					<instruction>	}</instruction>
+					<instruction>	vecLabels.sort();</instruction>
+					<instruction />
+					<instruction>	cmd.Clear();</instruction>
+					<instruction>	var tabPos = 0;</instruction>
+					<instruction />
+					<instruction>	for (var eLabels = new Enumerator(vecLabels); !eLabels.atEnd(); eLabels.moveNext())</instruction>
+					<instruction>	{</instruction>
+					<instruction>		var vecTabs = mapLabelToTabVec(eLabels.item());</instruction>
+					<instruction>		for (var eTabs = new Enumerator(vecTabs); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+					<instruction>		{</instruction>
+					<instruction>			var tab = eTabs.item();</instruction>
+					<instruction>			cmd.AddLine(&quot;Go TABPOS=&quot; + tabPos + &quot;,&quot; + tab);</instruction>
+					<instruction>			++tabPos;</instruction>
+					<instruction>		}</instruction>
+					<instruction>	}</instruction>
+					<instruction />
+					<instruction>	if (tabPos &gt; 1)</instruction>
+					<instruction>	{</instruction>
+					<instruction>		cmd.Run();</instruction>
+					<instruction>	}</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>&amp;Go To Root</label>
+				<icon1>#goup</icon1>
+				<function type="normal">
+					<instruction>Go ROOT USEQUALKEYS</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>转到原始路径</label>
+				<tip>转到当前标签打开的原始路径</tip>
+				<hotkeys>
+					<chord>
+						<key>tab</key>
+						<key>home</key>
+					</chord>
+				</hotkeys>
+				<icon1>#goback</icon1>
+				<function type="normal">
+					<instruction>//Go INITIALDIR</instruction>
+					<instruction>//Go TABSELECT home </instruction>
+					<instruction>//Go TABLOCKDIR</instruction>
+					<instruction>Go HOMEDIR USEQUALKEYS</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>转到标签的锁定路径</label>
+				<tip>标签锁定时的路径</tip>
+				<icon1>#formatlock</icon1>
+				<function type="normal">
+					<instruction>Go TABLOCKDIR</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>复制所有标签的路径</label>
+				<icon1>#clipcopy</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var lister = clickData.func.sourcetab.lister;</instruction>
+					<instruction>	var fsu = DOpus.FSUtil;</instruction>
+					<instruction>	var clip = &quot;&quot;;</instruction>
+					<instruction>	for (var eTabs = new Enumerator(lister.tabs); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+					<instruction>	{</instruction>
+					<instruction>		var path = fsu.Resolve(eTabs.item().path);</instruction>
+					<instruction>		clip += path + &quot;\n&quot;;</instruction>
+					<instruction>	}</instruction>
+					<instruction>	DOpus.SetClip(clip);</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+				<label>为所有标签创建快捷方式</label>
+				<tip>为来源栏所有标签的路径创建快捷方式到目标栏</tip>
+				<icon1>#clippasteshortcut</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	cmd.deselect = false;</instruction>
+					<instruction>	var fsu = DOpus.FSUtil;</instruction>
+					<instruction>	var lister = clickData.func.sourcetab.lister;</instruction>
+					<instruction>	var tabs = lister.tabsleft;</instruction>
+					<instruction>	if (clickData.func.sourcetab.right) </instruction>
+					<instruction>		tabs = lister.tabsright;</instruction>
+					<instruction>	</instruction>
+					<instruction>	//dopusrt /info /desktop\pathlist.txt,paths</instruction>
+					<instruction>	//Copy C:\123 MAKELINK TO /desktop</instruction>
+					<instruction>	for (var eTabs = new Enumerator(tabs); !eTabs.atEnd(); eTabs.moveNext())</instruction>
+					<instruction>	{</instruction>
+					<instruction>		var path = fsu.Resolve(eTabs.item().path);</instruction>
+					<instruction>		cmd.AddLine(&apos;Copy &quot;&apos;+path+&apos;&quot; MAKELINK WHENEXISTS=skip&apos;);</instruction>
+					<instruction>	}</instruction>
+					<instruction>	cmd.Run;</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+		</button>
+<button backcol="none" display="both" label_pos="right" textcol="none" type="menu">
+			<label>选择(&amp;X)</label>
+			<icon1>#advancedselect</icon1>
+			<button backcol="none" display="both" textcol="none">
+				<label>滚屏到选定项\t空格,Caps / Ctrl+\</label>
+				<tip>Scroll to Selection</tip>
+				<hotkeys>
+					<key>220,2</key>
+					<chord>
+						<key disable="yes">space</key>
+						<key>capslock</key>
+					</chord>
+				</hotkeys>
+				<icon1>#fullrowselection</icon1>
+				<function type="normal">
+					<instruction>SelectEx MAKEVISIBLE=checked</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>Se&amp;lect All</label>
+				<tip>Select all the files and folders in the active Lister</tip>
+				<hotkeys>
+					<key disable="yes">ctrl+A</key>
+				</hotkeys>
+				<icon1>#selectall</icon1>
+				<function type="normal">
+					<instruction>Select ALL</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>&amp;Invert Selection</label>
+				<tip>Invert the selection status of all files in the active Lister</tip>
+				<hotkeys>
+					<key disable="yes">ctrl+I</key>
+				</hotkeys>
+				<icon1>#selectinvert</icon1>
+				<function type="normal">
+					<instruction>Select INVERT</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>高级选择</label>
+				<tip>在活动窗口中用通配符模式选择文件和文件夹</tip>
+				<hotkeys>
+					<key disable="yes">ctrl+S</key>
+				</hotkeys>
+				<icon1>#selectwild</icon1>
+				<function type="normal">
+					<instruction>//Select</instruction>
+					<instruction>Select ADVANCED</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>&amp;Reselect Files</label>
+				<tip>Reselect all files that were used in the previous command</tip>
+				<icon1>#reselect</icon1>
+				<function type="normal">
+					<instruction>Select RESELECT</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="ctrl+capslock" hotkey_label="yes" textcol="none">
+				<label>取消选择</label>
+				<tip>保存当前选择到内存默认区后，取消选择\n</tip>
+				<icon1>#selectnone</icon1>
+				<function type="normal">
+					<instruction>@disablenosel </instruction>
+					<instruction>SelectEx TOVAR</instruction>
+					<instruction>Select NONE</instruction>
+					<instruction>//SelectEx EXACT MAKEVISIBLE FROMVAR</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="alt+A" hotkey_label="yes" separate="yes" textcol="none">
+				<label>取消选择(双栏)</label>
+				<tip>两栏同时取消选择</tip>
+				<icon1>#selectnone</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd=clickData.func.command;</instruction>
+					<instruction>	cmd.ClearFiles(); </instruction>
+					<instruction>	cmd.RunCommand(&quot;Select NONE&quot;); </instruction>
+					<instruction>	if (clickData.func.desttab) { </instruction>
+					<instruction>	cmd.SetSourceTab(clickData.func.desttab); </instruction>
+					<instruction>	cmd.RunCommand(&quot;Select NONE&quot;);</instruction>
+					<instruction>	}</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" textcol="none" type="menu">
+				<label>保存选择到...</label>
+				<tip>Save Selection to..</tip>
+				<icon1>#newmenu</icon1>
+				<button backcol="none" display="both" textcol="none">
+					<label>剪贴板\t(UNC     +Ctrl)</label>
+					<tip>Clipboard</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@disablenosel </instruction>
+						<instruction>@nodeselect</instruction>
+						<instruction />
+						<instruction>@keydown:none</instruction>
+						<instruction>Clipboard COPYNAMES</instruction>
+						<instruction />
+						<instruction>@keydown:ctrl</instruction>
+						<instruction>ClipboardEx COPYNAMES=allunc </instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" separate="yes" textcol="none">
+					<label>文件...</label>
+					<tip>File..</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@disablenosel </instruction>
+						<instruction>SelectEx TOFILE={dlgsave|选择一个文件来存储当前选择|Selection.txt} NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>内存 | 自定名..</label>
+					<tip>As..</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@disablenosel </instruction>
+						<instruction>SelectEx TOVAR={dlgstring|保存选择到内存-ID:} NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey="ctrl+shift+S" hotkey_label="yes" textcol="none">
+					<label>内存 | 默认</label>
+					<tip>Default</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@disablenosel </instruction>
+						<instruction>SelectEx TOVAR NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey="ctrl+num1" hotkey_label="yes" textcol="none">
+					<label>内存 | 槽位 #01</label>
+					<tip>RAM Slot  #01</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@disablenosel </instruction>
+						<instruction>SelectEx TOVAR=&quot;1_Slot&quot; NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey="ctrl+num2" hotkey_label="yes" textcol="none">
+					<label>内存 | 槽位 #02</label>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@disablenosel </instruction>
+						<instruction>SelectEx TOVAR=&quot;2_Slot&quot; NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey="ctrl+num3" hotkey_label="yes" textcol="none">
+					<label>内存 | 槽位 #03</label>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@disablenosel </instruction>
+						<instruction>SelectEx TOVAR=&quot;3_Slot&quot; NODESELECT</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" textcol="none" type="menu">
+				<label>加载选择从...</label>
+				<tip>Load Selection from..</tip>
+				<icon1>#newmenu</icon1>
+				<button backcol="none" display="both" hotkey="192,3" hotkey_label="yes" textcol="none">
+					<label>剪贴板\t(GO    +Ctrl)</label>
+					<tip>Ctrl+点击  打开剪贴板中第一项所在文件夹，并选择它</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@ifsel:numfiles&gt;0</instruction>
+						<instruction>SelectEx TOVAR=&quot;Temp&quot;</instruction>
+						<instruction>Select NONE</instruction>
+						<instruction>@ifsel:common</instruction>
+						<instruction>@keydown:none</instruction>
+						<instruction>SelectEx EXACT FROMCLIP MAKEVISIBLE</instruction>
+						<instruction>@keydown:ctrl</instruction>
+						<instruction>SelectEx EXACT FROMCLIP MAKEVISIBLE GO</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" separate="yes" textcol="none">
+					<label>文件...\t(GO    +Ctrl)</label>
+					<tip>File..</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@keydown:none</instruction>
+						<instruction>SelectEx FROMFILE={dlgopen|选择一个包含路径或项目名的文件|Selection.txt} EXACT MAKEVISIBLE</instruction>
+						<instruction>@keydown:ctrl</instruction>
+						<instruction>SelectEx FROMFILE={dlgopen|选择一个包含路径或项目名的文件|Selection.txt} EXACT MAKEVISIBLE GO</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey="ctrl+alt+S" hotkey_label="yes" textcol="none">
+					<label>内存 | 下拉...\t(GO  +Ctrl) </label>
+					<tip>从下拉菜单导入内存区中的选择项\n菜单中可用首字符选则，如：d 1 2 3\nLoad a memorized selection from a dropdown menu</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>//Select NONE</instruction>
+						<instruction>@keydown:none</instruction>
+						<instruction>SelectEx FROMVARDROP NODESELECT MAKEVISIBLE DESELECTNOMATCH</instruction>
+						<instruction>@keydown:ctrl</instruction>
+						<instruction>SelectEx FROMVARDROP NODESELECT MAKEVISIBLE GO DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>内存 | 默认\t(GO    +Ctrl)</label>
+					<tip>Default</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@keydown:none</instruction>
+						<instruction>SelectEx EXACT MAKEVISIBLE FROMVAR</instruction>
+						<instruction>@keydown:ctrl</instruction>
+						<instruction>SelectEx EXACT MAKEVISIBLE FROMVAR GO</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>内存 | 槽位 #01\t(GO    +Ctrl)</label>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@keydown:none</instruction>
+						<instruction>SelectEx EXACT MAKEVISIBLE FROMVAR=&quot;1_Slot&quot; MAKEVISIBLE</instruction>
+						<instruction>@keydown:ctrl</instruction>
+						<instruction>SelectEx EXACT MAKEVISIBLE FROMVAR=&quot;1_Slot&quot; MAKEVISIBLE GO</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>内存 | 槽位 #02\t(GO    +Ctrl)</label>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@keydown:none</instruction>
+						<instruction>SelectEx EXACT MAKEVISIBLE FROMVAR=&quot;2_Slot&quot; MAKEVISIBLE</instruction>
+						<instruction>@keydown:ctrl</instruction>
+						<instruction>SelectEx EXACT MAKEVISIBLE FROMVAR=&quot;2_Slot&quot; MAKEVISIBLE GO</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>内存 | 槽位 #03\t(GO    +Ctrl)</label>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>@keydown:none</instruction>
+						<instruction>SelectEx EXACT MAKEVISIBLE FROMVAR=&quot;3_Slot&quot; MAKEVISIBLE</instruction>
+						<instruction>@keydown:ctrl</instruction>
+						<instruction>SelectEx EXACT MAKEVISIBLE FROMVAR=&quot;3_Slot&quot; MAKEVISIBLE GO</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" separate="yes" textcol="none">
+				<label>清除已保存的选择</label>
+				<tip>清除内存区中已保存的选择</tip>
+				<icon1>#default:delete2</icon1>
+				<function type="normal">
+					<instruction>//SelectEx CLEARVAR default;1_Slot;2_Slot;3_Slot</instruction>
+					<instruction />
+					<instruction>//清除全部（删除全局变量中 Script.SelectEx.StoredSelection.* 所有变量）</instruction>
+					<instruction>SelectEx CLEARVAR -</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>选择最后一项</label>
+				<tip>选择最后一项，并滚屏使之可见</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>end</key>
+					</chord>
+				</hotkeys>
+				<icon1>#paper</icon1>
+				<function type="normal">
+					<instruction>Select LAST EXACT MAKEVISIBLE=immediate</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>选择第一个文件</label>
+				<tip>选择第一个文件，并滚屏使之可见</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>space</key>
+					</chord>
+				</hotkeys>
+				<icon1>#newfile</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	var items = clickData.func.sourcetab.files;</instruction>
+					<instruction>	if(items.count &gt; 0)</instruction>
+					<instruction>	{</instruction>
+					<instruction>		//var bool = items(0).selected;</instruction>
+					<instruction>		cmd.RunCommand(&quot;Select FIRST EXACT MAKEVISIBLE=immediate TYPE=files&quot;);</instruction>
+					<instruction>		//if(!bool)</instruction>
+					<instruction>		//cmd.RunCommand(&quot;Select \&quot;&quot;+items(0).name+&quot;\&quot; EXACT deselect&quot;);</instruction>
+					<instruction>	}</instruction>
+					<instruction>	else</instruction>
+					<instruction>		cmd.RunCommand(&quot;Select FIRST EXACT MAKEVISIBLE=immediate&quot;);</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>选择第一个文件夹</label>
+				<tip>选择第一个文件夹，并滚屏使之可见</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>tab</key>
+					</chord>
+				</hotkeys>
+				<icon1>#folderoptions</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd = clickData.func.command;</instruction>
+					<instruction>	var items = clickData.func.sourcetab.dirs;</instruction>
+					<instruction>	//DOpus.Output(items.count);</instruction>
+					<instruction>	if(items.count &gt; 0)</instruction>
+					<instruction>	{</instruction>
+					<instruction>	var eSel = new Enumerator(items); </instruction>
+					<instruction>	</instruction>
+					<instruction>	var firstItem = eSel.item();</instruction>
+					<instruction>	//DOpus.Output(firstItem.name);</instruction>
+					<instruction>	//var bool = firstItem.selected;</instruction>
+					<instruction>	cmd.RunCommand(&quot;Select \&quot;&quot;+firstItem.name+&quot;\&quot; EXACT MAKEVISIBLE=immediate&quot;);</instruction>
+					<instruction>	}</instruction>
+					<instruction>	else</instruction>
+					<instruction>	cmd.RunCommand(&quot;Select FIRST EXACT MAKEVISIBLE=immediate&quot;);</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="#d0c69e" display="both" hotkey_label="yes" textcol="none">
+				<label>间隔一行选择 (&amp;2)</label>
+				<tip>Select 2nd..</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>num2</key>
+					</chord>
+				</hotkeys>
+				<icon1>#selectinvert</icon1>
+				<function type="normal">
+					<instruction>SelectEx EXACT MAKEVISIBLE NTH=2</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" textcol="none">
+				<label>间隔选择第N个</label>
+				<tip>Select N-th..</tip>
+				<icon1>#selectinvert</icon1>
+				<function type="normal">
+					<instruction>SelectEx EXACT MAKEVISIBLE NTH={dlgstring|输入间隔N的数值:|2} </instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none" type="menu">
+				<label>Select &amp;Other</label>
+				<icon1>#advancedselect</icon1>
+				<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+					<label>&amp;Select Duplicates...</label>
+					<tip>Select files located by the Duplicate Files finder</tip>
+					<icon1>#dupepane</icon1>
+					<function type="normal">
+						<instruction>Select DUPES</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>仅选择文件</label>
+					<icon1>#selectall</icon1>
+					<function type="normal">
+						<instruction>Select none</instruction>
+						<instruction>Select ALLFILES</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" separate="yes" textcol="none">
+					<label>仅选择文件夹</label>
+					<icon1>#folderoptions</icon1>
+					<function type="normal">
+						<instruction>Select NONE</instruction>
+						<instruction>Select ALLDIRS</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey="insert" textcol="none">
+					<label>连续选择下一个\tInsert</label>
+					<tip>在复选框模式下，则是切换勾选</tip>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>@if:Set CHECKBOXMODE=on</instruction>
+						<instruction>SendKeys &quot;^% &quot;</instruction>
+						<instruction>@if:else</instruction>
+						<instruction>Select NEXT=row,nodeselect</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>连续选择上一个\tShift+Insert</label>
+					<hotkeys>
+						<key disable="yes">shift+insert</key>
+					</hotkeys>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>Select PREV=row,nodeselect</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>所有窗口选择上一个</label>
+					<tip>开多个窗口预览图片时，所有窗口同步选择上一个，便于预览对比</tip>
+					<icon1>#copysourcedest_left</icon1>
+					<function type="script">
+						<instruction>@script JScript</instruction>
+						<instruction>function OnClick(clickData)</instruction>
+						<instruction>{</instruction>
+						<instruction> 	var cmd = DOpus.Create.Command;</instruction>
+						<instruction>	for(var eListers = new Enumerator(DOpus.listers); !eListers.atEnd(); eListers.moveNext())</instruction>
+						<instruction>	{</instruction>
+						<instruction>		eTab = eListers.item().activetab;</instruction>
+						<instruction>		cmd.SetSourceTab(eTab);</instruction>
+						<instruction>		cmd.RunCommand(&quot;Select PREV&quot;);</instruction>
+						<instruction>	}</instruction>
+						<instruction>}</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" separate="yes" textcol="none">
+					<label>所有窗口选择下一个</label>
+					<tip>开多个窗口预览图片时，所有窗口同步选择下一个，便于预览对比</tip>
+					<icon1>#copysourcedest_right</icon1>
+					<function type="script">
+						<instruction>@script JScript</instruction>
+						<instruction>function OnClick(clickData)</instruction>
+						<instruction>{</instruction>
+						<instruction> 	var cmd = DOpus.Create.Command;</instruction>
+						<instruction>	for(var eListers = new Enumerator(DOpus.listers); !eListers.atEnd(); eListers.moveNext())</instruction>
+						<instruction>	{</instruction>
+						<instruction>		eTab = eListers.item().activetab;</instruction>
+						<instruction>		cmd.SetSourceTab(eTab);</instruction>
+						<instruction>		cmd.RunCommand(&quot;Select NEXT&quot;);</instruction>
+						<instruction>	}</instruction>
+						<instruction>}</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>选择最新修改的文件(&amp;X)</label>
+				<tip>（Shift = 最旧）</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>X</key>
+					</chord>
+				</hotkeys>
+				<icon1>#updateexisting</icon1>
+				<function type="normal">
+					<instruction>//Select none</instruction>
+					<instruction>@keydown:none</instruction>
+					<instruction>Select DATE=newest SETFOCUS DESELECTNOMATCH TYPE=files</instruction>
+					<instruction>@keydown:shift</instruction>
+					<instruction>Select DATE=oldest SETFOCUS DESELECTNOMATCH TYPE=files</instruction>
+					<instruction />
+					<instruction>//Select DATE=newest MAKEVISIBLE=immediate</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>选择最新创建的文件(&amp;C)</label>
+				<tip>（Shift = 最旧）</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>C</key>
+					</chord>
+				</hotkeys>
+				<icon1>#updateexisting</icon1>
+				<function type="normal">
+					<instruction>//Select none</instruction>
+					<instruction>@keydown:none</instruction>
+					<instruction>Select DATE=newest,created SETFOCUS DESELECTNOMATCH TYPE=files</instruction>
+					<instruction>@keydown:shift</instruction>
+					<instruction>Select DATE=oldest,created SETFOCUS DESELECTNOMATCH TYPE=files</instruction>
+					<instruction />
+					<instruction>//Select DATE=newest MAKEVISIBLE=immediate</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey="shift+alt+N" hotkey_label="yes" textcol="none">
+				<label>选择最新的文件++</label>
+				<tip>连续按键则从新向旧依次增加选择</tip>
+				<icon1>#updateexisting</icon1>
+				<function type="normal">
+					<instruction>Select DATE=next,newest MAKEVISIBLE=immediate TYPE=files</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>选择最大的文件(&amp;D)</label>
+				<tip>（Shift = 最小）Select largest File (SC = smallest)</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>D</key>
+					</chord>
+				</hotkeys>
+				<icon1>#filterfield</icon1>
+				<function type="normal">
+					<instruction>Select none</instruction>
+					<instruction>@keydown:none</instruction>
+					<instruction>Select SIZE=largest SETFOCUS TYPE=files</instruction>
+					<instruction>@keydown:shift</instruction>
+					<instruction>Select SIZE=smallest SETFOCUS TYPE=files</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>选择 &amp;0 字节文件 (Shift = 隐藏)</label>
+				<tip>Select 0 byte Files (SC = hide)</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>0</key>
+					</chord>
+				</hotkeys>
+				<icon1>#advancedselect</icon1>
+				<function type="normal">
+					<instruction>Select TYPE=files SIZE=0</instruction>
+					<instruction>@keydown:shift</instruction>
+					<instruction>Select HIDESEL NOPATTERN</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" textcol="none">
+				<label>选择空文件夹(&amp;K)</label>
+				<tip>选择无任何子文件的空文件夹</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>K</key>
+					</chord>
+				</hotkeys>
+				<icon1>#filterfield</icon1>
+				<function type="script">
+					<instruction>@script JScript</instruction>
+					<instruction>function OnClick(clickData)</instruction>
+					<instruction>{</instruction>
+					<instruction>	var cmd = DOpus.Create.command;</instruction>
+					<instruction>	var dirs = clickData.func.sourcetab.selected_dirs;</instruction>
+					<instruction>	if(dirs.count == 0) //如果未选择文件夹</instruction>
+					<instruction>		dirs = clickData.func.sourcetab.dirs;//以当前目录下所有文件夹作为基数</instruction>
+					<instruction>	cmd.ClearFiles();//清除已选择的文件</instruction>
+					<instruction>	</instruction>
+					<instruction>	for (var eSel = new Enumerator(dirs); !eSel.atEnd(); eSel.moveNext())</instruction>
+					<instruction>	{</instruction>
+					<instruction>		var dir = eSel.item();</instruction>
+					<instruction>		if (!dir.is_junction &amp;&amp; !dir.is_symlink) {</instruction>
+					<instruction>			var dirEnum = DOpus.FSUtil.ReadDir(dir.RealPath);</instruction>
+					<instruction>			//if (dirEnum.complete)</instruction>
+					<instruction>			if (dirEnum.error==18){//无权限访问时error=5，无内容时error=18</instruction>
+					<instruction>				//DOpus.Output(dirEnum.error);</instruction>
+					<instruction>				//DOpus.Output(dir);</instruction>
+					<instruction>				cmd.AddFile(dir);</instruction>
+					<instruction>			}</instruction>
+					<instruction>		}</instruction>
+					<instruction>	}</instruction>
+					<instruction>	cmd.RunCommand(&quot;Select FROMSCRIPT DESELECTNOMATCH&quot;);</instruction>
+					<instruction>}</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" textcol="none">
+				<label>选择指定扩展名</label>
+				<icon1>#advancedselect</icon1>
+				<function type="normal">
+					<instruction>Select none</instruction>
+					<instruction>Select *.{dlgstringS|请输入扩展名|docx}  DESELECTNOMATCH</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" hotkey_label="yes" label_pos="right" textcol="none">
+				<label>正则 | 文件名称末尾是 (&amp;n) </label>
+				<tip>名称末尾是(1) (2)等</tip>
+				<hotkeys>
+					<chord>
+						<key disable="yes">space</key>
+						<key>N</key>
+					</chord>
+				</hotkeys>
+				<icon1>#advancedselect</icon1>
+				<function type="normal">
+					<instruction>//@set regex={dlgstringS|请输入正则表达式|.*\d\)\..*}</instruction>
+					<instruction>//Select {$regex} REGEXP DESELECTNOMATCH TYPE=files</instruction>
+					<instruction />
+					<instruction>Select .*\d\)\..* REGEXP DESELECTNOMATCH TYPE=files</instruction>
+					<instruction>//文件夹</instruction>
+					<instruction>Select .*\d\)$ REGEXP</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" label_pos="right" textcol="none">
+				<label>Select Ex&amp;panded Folder Items</label>
+				<tip>Select everything below any currently expanded folders</tip>
+				<icon1>#folderexpanded</icon1>
+				<function type="normal">
+					<instruction>@enableif:Set EXPANDABLEFOLDERS=On</instruction>
+					<instruction>@nofilenamequoting</instruction>
+					<instruction>Select DESELECTNOMATCH FILTERDEF location match &quot;{sourcepath|escregex|escbackslash}.+&quot; regex</instruction>
+				</function>
+			</button>
+			<button backcol="none" display="both" separate="yes" textcol="none" type="menu">
+				<label>Select &amp;by Pattern</label>
+				<icon1>#newmenu</icon1>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>&amp;Select Empty Folders</label>
+					<tip>Select folders which contain no child files or folders</tip>
+					<icon1>#filterfolder</icon1>
+					<function type="normal">
+						<instruction>Select DESELECTNOMATCH FILTERDEF type match folders and foldercontent nomatch ( name match * )</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>S&amp;elect Zero-Byte Folders</label>
+					<tip>Select folders which are empty or only have empty files or similar folders below them</tip>
+					<icon1>#filterfolder</icon1>
+					<function type="normal">
+						<instruction>Select DESELECTNOMATCH FILTERDEF type match folders and size match = 0 bytes</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>选择&amp;500kb至5mb大小的文件</label>
+					<icon1>#advancedselect</icon1>
+					<function type="normal">
+						<instruction>Select SIZE 500kb..5mb DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>选择修改日期在指定区间内的文件</label>
+					<tip>按修改时间</tip>
+					<icon1>#updateexisting</icon1>
+					<function type="normal">
+						<instruction>Select none</instruction>
+						<instruction>@set dt={dlgstringS|请输入日期区间|2023-12-1..2023-12-31}</instruction>
+						<instruction>Select DATE={$dt} TYPE=files MAKEVISIBLE=immediate</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>选择创建日期在指定区间内的文件</label>
+					<tip>按创建时间</tip>
+					<icon1>#updateexisting</icon1>
+					<function type="normal">
+						<instruction>Select none</instruction>
+						<instruction>@set dt={dlgstringS|请输入日期区间|2023-12-1..2023-12-31}</instruction>
+						<instruction>Select DATE=created,{$dt} TYPE=files MAKEVISIBLE=immediate</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>选择修改时间在三天内的文件</label>
+					<icon1>#updateexisting</icon1>
+					<function type="normal">
+						<instruction>Select none</instruction>
+						<instruction>Select DATE &quot;&lt;3 days&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>选择包含指定文件名的文件夹</label>
+					<tip>Select Folders containing File</tip>
+					<icon1>#syncpane1</icon1>
+					<function type="script">
+						<instruction>@script jscript</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>// Simple dialog-based search to select folders.</instruction>
+						<instruction>// Folders will be selected if they contain matching files and at the same</instruction>
+						<instruction>// time do not contain a subfolder (optional).</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>var defaultSearch = new SearchParams(</instruction>
+						<instruction>	/*search string*/	&apos;iso&apos;,</instruction>
+						<instruction>	/*search extension*/	true,</instruction>
+						<instruction>	/*search stem*/		false,</instruction>
+						<instruction>	/*subfolder name*/	&apos;video_ts&apos;,</instruction>
+						<instruction>	/*exclude subfolder*/	true</instruction>
+						<instruction>);</instruction>
+						<instruction />
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function OnClick(data){</instruction>
+						<instruction>	DOpus.ClearOutput();</instruction>
+						<instruction>	data.func.command.ClearFiles();</instruction>
+						<instruction />
+						<instruction>	//get enumerator and count of selected folders or complete list of folders</instruction>
+						<instruction>	var folders = GetFolders(data);</instruction>
+						<instruction />
+						<instruction>	//get a combination of default, last used and current dialog search params</instruction>
+						<instruction>	var params = GetSearchParams(data); if (!params) return; //dialog cancelled</instruction>
+						<instruction />
+						<instruction>	//save current search params</instruction>
+						<instruction>	SaveSearchParams(data, params);</instruction>
+						<instruction />
+						<instruction>	//init, open and return progress dialog</instruction>
+						<instruction>	var progress = OpenProgressDialog( data, &quot;文件夹选择器&quot;, folders.count);</instruction>
+						<instruction />
+						<instruction>	var searchMode = params.GetSearchMode();</instruction>
+						<instruction>	while (!folders.enumerator.atEnd() ) {</instruction>
+						<instruction>		var folder = folders.enumerator.item(); folders.enumerator.moveNext();</instruction>
+						<instruction>		dout(&quot;文件夹 [&quot;+folder.name+&quot;]..&quot;);</instruction>
+						<instruction>		progress.SetName(folder.name);</instruction>
+						<instruction>		//if subfolder to exclude is given, search subfolders before looking for matching files</instruction>
+						<instruction>		if (params.excludeFolder &amp;&amp; defaultSearch.excludeFolderName!=&quot;&quot; &amp;&amp; SubFolderExists( folder.path+&quot;\\&quot;+folder.name, defaultSearch.excludeFolderName)){</instruction>
+						<instruction>			dout(&quot;    包含子文件夹 [&quot;+defaultSearch.excludeFolderName+&quot;], 正在跳过文件夹.&quot;);</instruction>
+						<instruction>			progress.StepFiles(1);</instruction>
+						<instruction>			continue;</instruction>
+						<instruction>		}</instruction>
+						<instruction>		if (exists = FileExists( folder.path+&quot;\\&quot;+folder.name, params.searchMe, searchMode)){</instruction>
+						<instruction>			dout(&quot;    至少包含一个匹配的文件.&quot;);</instruction>
+						<instruction>			data.func.command.AddFile(folder);</instruction>
+						<instruction>		}</instruction>
+						<instruction>		progress.StepFiles(1);</instruction>
+						<instruction>    }</instruction>
+						<instruction />
+						<instruction>	data.func.command.RunCommand(&quot;Select FROMSCRIPT DESELECTNOMATCH MAKEVISIBLE&quot;);</instruction>
+						<instruction>	progress.Hide();</instruction>
+						<instruction>	DOMsgBox(&quot;ISO-FolderSelector&quot;,&quot;找到 &quot;+data.func.command.files.count+&quot; 个文件夹与搜索相匹配.&quot;,&quot;确定&quot;);</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function ReadFolder( path, recurse, exception){</instruction>
+						<instruction>	if (recurse == undefined) recurse=false;</instruction>
+						<instruction>	if (exception == undefined) exception=true;</instruction>
+						<instruction>	var fEnum = DOpus.FSUtil.ReadDir( path, true);</instruction>
+						<instruction>	if (fEnum.error!=0){</instruction>
+						<instruction>		var error = &quot;ReadFolder(): Error reading folder [&quot;+name+&quot;], code [&quot;+fEnum.error+&quot;].&quot;;</instruction>
+						<instruction>		if (exception) throw error;</instruction>
+						<instruction>		dout(error);</instruction>
+						<instruction>	}</instruction>
+						<instruction>	return fEnum;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function SubFolderExists( folderPath, subFolderName){</instruction>
+						<instruction>	subFolderName = subFolderName.toLowerCase();</instruction>
+						<instruction>	var fEnum = ReadFolder( folderPath, true, true);</instruction>
+						<instruction>	while (!fEnum.complete &amp;&amp; (fItem = fEnum.Next()))</instruction>
+						<instruction>		if (fItem.is_dir &amp;&amp; (fItem.name.toLowerCase() == subFolderName))</instruction>
+						<instruction>			return true;</instruction>
+						<instruction>	return false;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function FileExists( folderPath, searchMe, searchMode){</instruction>
+						<instruction>	if (searchMode == undefined) searchMode=&apos;full&apos;;</instruction>
+						<instruction>	searchMe = searchMe.toLowerCase();</instruction>
+						<instruction>	if (searchMode==&apos;ext&apos;) searchMe=searchMe.replace(&apos;\.&apos;,&apos;&apos;);</instruction>
+						<instruction>	var fEnum = ReadFolder( folderPath, true, true);</instruction>
+						<instruction>	while (!fEnum.complete &amp;&amp; (fItem = fEnum.Next())){</instruction>
+						<instruction>		if (fItem.is_dir) continue;</instruction>
+						<instruction>		switch (searchMode){</instruction>
+						<instruction>			case &apos;ext&apos;:</instruction>
+						<instruction>				if (fItem.ext.toLowerCase()==&quot;.&quot;+searchMe)</instruction>
+						<instruction>					return true;</instruction>
+						<instruction>			break;</instruction>
+						<instruction>			case &apos;stem&apos;:</instruction>
+						<instruction>				if (fItem.name_stem.toLowerCase().indexOf(searchMe)!=-1)</instruction>
+						<instruction>					return true;</instruction>
+						<instruction>			break;</instruction>
+						<instruction>			case &apos;full&apos;:</instruction>
+						<instruction>			default:</instruction>
+						<instruction>				if (fItem.name.toLowerCase().indexOf(searchMe)!=-1)</instruction>
+						<instruction>					return true;</instruction>
+						<instruction>			break;</instruction>
+						<instruction>		}</instruction>
+						<instruction>	}</instruction>
+						<instruction>	return false;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function GetFolders(data){</instruction>
+						<instruction>	if (data.func.sourcetab.selected_dirs.count)</instruction>
+						<instruction>		var dirs = data.func.sourcetab.selected_dirs;</instruction>
+						<instruction>	else</instruction>
+						<instruction>		var dirs = data.func.sourcetab.dirs;</instruction>
+						<instruction>	return { enumerator:new Enumerator(dirs), count:dirs.count};</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function DoDialog( params){</instruction>
+						<instruction>	var dlg = DOpus.Dlg</instruction>
+						<instruction>	dlg.window = DOpus.Listers(0);</instruction>
+						<instruction>	dlg.message = &quot;请输入要搜索的字符串/扩展名:\n &quot;;</instruction>
+						<instruction>	dlg.title = &quot;文件夹选择器..&quot;;</instruction>
+						<instruction>	dlg.buttons = &quot;确定|取消&quot;;</instruction>
+						<instruction>	dlg.icon = &quot;question&quot;;</instruction>
+						<instruction />
+						<instruction>	dlg.max = 128; //enable text field</instruction>
+						<instruction>	dlg[&apos;default&apos;] = params.searchMe;</instruction>
+						<instruction />
+						<instruction>	dlg.options(0).label = &quot;搜索扩展名&quot;;</instruction>
+						<instruction>	dlg.options(0).state = params.searchExtension;</instruction>
+						<instruction />
+						<instruction>	dlg.options(1).label = &quot;搜索主名stem&quot;;</instruction>
+						<instruction>	dlg.options(1).state = params.searchStem;</instruction>
+						<instruction />
+						<instruction>	if (defaultSearch.excludeFolderName!=&quot;&quot;){</instruction>
+						<instruction>		dlg.options(2).label = &quot;可能不包含文件夹 (&quot;+defaultSearch.excludeFolderName+&quot;)&quot;;</instruction>
+						<instruction>		dlg.options(2).state = params.excludeFolder;</instruction>
+						<instruction>	}</instruction>
+						<instruction>	return dlg;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function OpenProgressDialog( data, title, numFiles){</instruction>
+						<instruction>	var progress = data.func.command.progress;</instruction>
+						<instruction>	progress.delay = false;</instruction>
+						<instruction>	progress.abort = true;</instruction>
+						<instruction>	progress.Init(data.func.sourcetab, title);</instruction>
+						<instruction>	progress.AddFiles(numFiles);</instruction>
+						<instruction>	progress.Show();</instruction>
+						<instruction>	return progress;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function SearchParams(searchMe, searchExtension, searchStem, excludeFolderName, excludeFolder){</instruction>
+						<instruction>	if (searchMe == undefined) searchMe=&apos;iso&apos;;</instruction>
+						<instruction>	if (searchExtension == undefined) searchExtension=true;</instruction>
+						<instruction>	if (searchStem == undefined) searchStem=false;</instruction>
+						<instruction>	if (excludeFolderName == undefined) excludeFolderName=&quot;&quot;;</instruction>
+						<instruction>	if (excludeFolder == undefined) excludeFolder=false;</instruction>
+						<instruction>	this.searchMe=searchMe;</instruction>
+						<instruction>	this.searchExtension=searchExtension;</instruction>
+						<instruction>	this.searchStem=searchStem;</instruction>
+						<instruction>	this.excludeFolderName=excludeFolderName;</instruction>
+						<instruction>	this.excludeFolder=excludeFolder;</instruction>
+						<instruction>	this.GetSearchMode = function(){</instruction>
+						<instruction>		var searchMode=&apos;full&apos;;</instruction>
+						<instruction>		if (this.searchExtension &amp;&amp; !this.searchStem) searchMode=&apos;ext&apos;;</instruction>
+						<instruction>		if (!this.searchExtension &amp;&amp; this.searchStem) searchMode=&apos;stem&apos;;</instruction>
+						<instruction>		return searchMode;</instruction>
+						<instruction>	}</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function GetSearchParamsFromDialog(dlg){</instruction>
+						<instruction>	var dlgSearchParams = new SearchParams();</instruction>
+						<instruction>	dlgSearchParams.searchMe = dlg.input;</instruction>
+						<instruction>	dlgSearchParams.searchExtension = dlg.options(0).state;</instruction>
+						<instruction>	dlgSearchParams.searchStem = dlg.options(1).state;</instruction>
+						<instruction>	if (defaultSearch.excludeFolderName){ //exclude subfolder name given, so option is present to exclude it</instruction>
+						<instruction>		dlgSearchParams.excludeFolder = dlg.options(2).state;</instruction>
+						<instruction>	}</instruction>
+						<instruction>	return dlgSearchParams;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function ValidateSearchParams(params){</instruction>
+						<instruction>	if (!params)</instruction>
+						<instruction>		return false;</instruction>
+						<instruction>	if (!params.searchExtension &amp;&amp; !params.searchStem){</instruction>
+						<instruction>			DOMsgBox(&quot;文件夹选择器&quot;, &quot;你需要选择主名或扩展名或两者!&quot;, &quot;Oops!&quot;);</instruction>
+						<instruction>			return false;</instruction>
+						<instruction>	}</instruction>
+						<instruction>	if (params.searchMe==&quot;&quot;){</instruction>
+						<instruction>			DOMsgBox(&quot;文件夹选择器&quot;, &quot;你忘了输入一个要搜索的字符串!&quot;, &quot;Oops!&quot;);</instruction>
+						<instruction>			return false;</instruction>
+						<instruction>	}</instruction>
+						<instruction>	return true;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function GetDefaultOrLastSearchParams(data){</instruction>
+						<instruction>	var search = defaultSearch;</instruction>
+						<instruction>	if (data.func.sourcetab.vars.exists(&quot;lastSearch&quot;))</instruction>
+						<instruction>		search = Vector2Search(data.func.sourcetab.vars.get(&quot;lastSearch&quot;));</instruction>
+						<instruction>	return search;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function GetCombinedSearchParams(data){</instruction>
+						<instruction>	var userSearchParams = GetDefaultOrLastSearchParams(data);</instruction>
+						<instruction>	var dlg = DoDialog(userSearchParams);</instruction>
+						<instruction>	var result=dlg.Show();</instruction>
+						<instruction>	if (result==0){</instruction>
+						<instruction>		dout(&quot;文件夹选择器对话框已取消.&quot;);</instruction>
+						<instruction>		return null;</instruction>
+						<instruction>	}</instruction>
+						<instruction>	return GetSearchParamsFromDialog(dlg);</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function GetSearchParams(data){</instruction>
+						<instruction>	var params = null;</instruction>
+						<instruction>	while (!ValidateSearchParams(params)){</instruction>
+						<instruction>		params = GetCombinedSearchParams(data);</instruction>
+						<instruction>		if (!params)</instruction>
+						<instruction>			return false; //dialog canceled</instruction>
+						<instruction>	}</instruction>
+						<instruction>	return params;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function SaveSearchParams(data, params){</instruction>
+						<instruction>	data.func.sourcetab.vars.set(&quot;lastSearch&quot;, Search2Vector(params));</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function Search2Vector( search){</instruction>
+						<instruction>	var vector = DOpus.NewVector();</instruction>
+						<instruction>	vector.push_back(search.searchMe);</instruction>
+						<instruction>	vector.push_back(search.searchExtension);</instruction>
+						<instruction>	vector.push_back(search.searchStem);</instruction>
+						<instruction>	vector.push_back(search.excludeFolderName);</instruction>
+						<instruction>	vector.push_back(search.excludeFolder);</instruction>
+						<instruction>	return vector;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function Vector2Search( vector){</instruction>
+						<instruction>	return new SearchParams( vector(0), vector(1), vector(2), vector(3), vector(4));</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function DOMsgBox(title,message,buttons){</instruction>
+						<instruction>	var dlg = DOpus.Dlg</instruction>
+						<instruction>	dlg.window = DOpus.Listers(0);</instruction>
+						<instruction>	dlg.message = message;</instruction>
+						<instruction>	dlg.title = title;</instruction>
+						<instruction>	dlg.buttons = buttons;</instruction>
+						<instruction>	var result = dlg.Show();</instruction>
+						<instruction>	dout(title+&quot; - &quot;+message+&quot; - &quot;+buttons+&quot; -&gt; &quot;+result);</instruction>
+						<instruction>	return result;</instruction>
+						<instruction>}</instruction>
+						<instruction>///////////////////////////////////////////////////////////////////////////////</instruction>
+						<instruction>function dout(text){</instruction>
+						<instruction>	DOpus.Output(text);</instruction>
+						<instruction>}</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>正则 | 名称包含汉字的文件</label>
+					<icon1>#advancedselect</icon1>
+					<function type="normal">
+						<instruction>Select .*[\u4e00-\u9fff]+.* REGEXP</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" textcol="none" type="menu">
+				<label>用过滤器(&amp;F)</label>
+				<icon1>#filterfield</icon1>
+				<button backcol="none" display="both" textcol="none">
+					<label>单个 | 按过滤器选择</label>
+					<tip>Select by Filter</tip>
+					<icon1>#recursivefilter</icon1>
+					<function type="normal">
+						<instruction>SelectEx FILTERDROP=select NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" separate="yes" textcol="none">
+					<label>单个 | 按过滤器取消选择</label>
+					<tip>DeSelect by Filter</tip>
+					<icon1>#recursivefilter</icon1>
+					<function type="normal">
+						<instruction>SelectEx FILTERDROP=deselect NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>多个 | 按过滤器选择</label>
+					<tip>Select by Filter</tip>
+					<icon1>#recursivefilter</icon1>
+					<function type="normal">
+						<instruction>SelectEx FILTERLIST=select NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" separate="yes" textcol="none">
+					<label>多个 | 按过滤器取消选择</label>
+					<tip>DeSelect by Filter</tip>
+					<icon1>#recursivefilter</icon1>
+					<function type="normal">
+						<instruction>SelectEx FILTERLIST=deselect NODESELECT</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>名称包含汉字</label>
+					<tip>仅显示名称包含汉字的</tip>
+					<icon1>#recursivefilter</icon1>
+					<function type="normal">
+						<instruction>select FILTER=&quot;名称包含汉字.ofi&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none" type="menu">
+					<label>今天</label>
+					<icon1>#window</icon1>
+					<button backcol="none" display="label" textcol="none">
+						<label>今天创建的压缩包</label>
+						<icon1>#newcommand</icon1>
+						<function type="normal">
+							<instruction>select FILTER=&quot;今天创建的压缩包.ofi&quot;</instruction>
+						</function>
+					</button>
+					<button backcol="none" display="label" textcol="none">
+						<label>今天创建的文件</label>
+						<icon1>#newcommand</icon1>
+						<function type="normal">
+							<instruction>select FILTER=&quot;今天创建的文件.ofi&quot;</instruction>
+						</function>
+					</button>
+					<button backcol="none" display="label" textcol="none">
+						<label>今天创建的文件夹</label>
+						<icon1>#newcommand</icon1>
+						<function type="normal">
+							<instruction>select FILTER=&quot;今天创建的文件夹.ofi&quot;</instruction>
+						</function>
+					</button>
+					<button backcol="none" display="label" textcol="none">
+						<label>今天创建的文件夹和文件</label>
+						<icon1>#newcommand</icon1>
+						<function type="normal">
+							<instruction>select FILTER=&quot;今天创建的文件夹和文件.ofi&quot;</instruction>
+						</function>
+					</button>
+					<button backcol="none" display="label" textcol="none">
+						<label>今天修改的文件</label>
+						<icon1>#newcommand</icon1>
+						<function type="normal">
+							<instruction>select FILTER=&quot;今天修改的文件.ofi&quot;</instruction>
+						</function>
+					</button>
+					<button backcol="none" display="label" textcol="none">
+						<label>今天修改的文件夹</label>
+						<icon1>#newcommand</icon1>
+						<function type="normal">
+							<instruction>select FILTER=&quot;今天修改的文件夹.ofi&quot;</instruction>
+						</function>
+					</button>
+					<button backcol="none" display="label" textcol="none">
+						<label>今天修改的文件夹和文件</label>
+						<icon1>#newcommand</icon1>
+						<function type="normal">
+							<instruction>select FILTER=&quot;今天修改的文件夹和文件.ofi&quot;</instruction>
+						</function>
+					</button>
+				</button>
+			</button>
+			<button backcol="none" display="both" textcol="none" type="menu">
+				<label>文件类型(&amp;T)</label>
+				<icon1>#filetype</icon1>
+				<button backcol="none" display="label" textcol="none">
+					<label>压缩包</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>select FILTER=&quot;类型 压缩包.ofi&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>图像文件</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>select FILTER=&quot;类型 图像文件.ofi&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>音频文件</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>select FILTER=&quot;类型 音频文件.ofi&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>视频文件</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>select FILTER=&quot;类型 视频文件.ofi&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>文档文件</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>select FILTER=&quot;类型 文档文件.ofi&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>程序文件</label>
+					<icon1>#newcommand</icon1>
+					<function type="normal">
+						<instruction>select FILTER=&quot;类型 程序文件.ofi&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="label" textcol="none">
+					<label>除视频之外全部</label>
+					<icon1>#empty</icon1>
+					<function type="normal">
+						<instruction>select FILTER=&quot;类型 除视频之外全部.ofi&quot;</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" textcol="none" type="menu">
+				<label>双栏选择(&amp;S)</label>
+				<icon1>#newmenu</icon1>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>来源 | 双栏都有</label>
+					<tip>在来源栏中选择双栏都有的文件</tip>
+					<icon1>#syncpane1</icon1>
+					<function type="normal">
+						<instruction>Select DESTTOSOURCE=in DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>S&amp;elect Source-not-in-Destination</label>
+					<tip>Select those file names in the source which do not exist in the destination</tip>
+					<icon1>#flatview</icon1>
+					<function type="normal">
+						<instruction>Select DESTTOSOURCE=notin DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>Se&amp;lect Source Selection to Destination</label>
+					<tip>Select files in the destination with the same names as the files currently selected in the source</tip>
+					<icon1>#flickrsync2</icon1>
+					<function type="normal">
+						<instruction>Select SOURCETODEST DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>目标 | 来源无而目标有</label>
+					<tip>选择来源文件夹中无而目标文件夹中有的文件</tip>
+					<icon1>#syncpane1</icon1>
+					<function type="normal">
+						<instruction>Select SOURCETODEST=notin DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>&amp;Select Source All to Destination</label>
+					<tip>Select files in the destination with the same names as files that exist in the source</tip>
+					<icon1>#syncpane1</icon1>
+					<function type="normal">
+						<instruction>Select SOURCETODEST=in DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>Sele&amp;ct Source All to Destination (ignore extensions)</label>
+					<tip>Select files in the destination with the same name stems as files that exist in the source (extensions may differ)</tip>
+					<icon1>#syncpane1</icon1>
+					<function type="normal">
+						<instruction>Select SOURCETODEST=in,noext DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" textcol="none" type="menu">
+				<label>同扩展名(&amp;E)</label>
+				<icon1>#newmenu</icon1>
+				<button backcol="none" display="both" hotkey="187,4" textcol="none">
+					<label>选择相同扩展名(焦点)\tAlt+=</label>
+					<tip>选择与焦点处文件具有相同扩展名的所有文件</tip>
+					<icon1>#duplicate</icon1>
+					<function type="script">
+						<instruction>@script JScript</instruction>
+						<instruction>function OnClick(clickData)</instruction>
+						<instruction>{</instruction>
+						<instruction>	var cmd = clickData.func.command;</instruction>
+						<instruction>	cmd.deselect = false;</instruction>
+						<instruction>	var focusitem = clickData.func.sourcetab.GetFocusItem();</instruction>
+						<instruction>	if(focusitem.is_dir)</instruction>
+						<instruction>		cmd.RunCommand(&quot;Select ALLDIRS&quot;);</instruction>
+						<instruction>	else{</instruction>
+						<instruction>		var selext=focusitem.ext;</instruction>
+						<instruction>		if(selext)</instruction>
+						<instruction>		cmd.RunCommand(&quot;Select *&quot;+selext);</instruction>
+						<instruction>	}</instruction>
+						<instruction>}</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>选择全部相同扩展名</label>
+					<tip>选择与选定的所有文件具有相同扩展名的文件</tip>
+					<icon1>#advancedselect</icon1>
+					<function type="normal">
+						<instruction>Select SIMILAR=trueext</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>选择相同基本名(&amp;J)\t空格, J</label>
+					<tip>选择具有相同基本名的文件，忽略扩展名</tip>
+					<hotkeys>
+						<chord>
+							<key disable="yes">space</key>
+							<key>J</key>
+						</chord>
+					</hotkeys>
+					<icon1>#advancedselect</icon1>
+					<function type="normal">
+						<instruction>Select SIMILARBASE</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" hotkey="189,4" textcol="none">
+					<label>不选相同扩展名\tAlt+-</label>
+					<tip>取消选择与焦点处文件扩展名相同的所有文件</tip>
+					<icon1>#selectnone</icon1>
+					<function type="script">
+						<instruction>@script JScript</instruction>
+						<instruction>function OnClick(clickData) {</instruction>
+						<instruction>	var cmd = clickData.func.command;</instruction>
+						<instruction>	cmd.deselect = false;</instruction>
+						<instruction>	</instruction>
+						<instruction>	var selext = clickData.func.sourcetab.GetFocusItem().ext;</instruction>
+						<instruction>	if(selext)</instruction>
+						<instruction>		cmd.RunCommand(&quot;Select *&quot;+selext+&quot; DESELECT&quot;);</instruction>
+						<instruction>}</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" textcol="none" type="menu">
+				<label>随机选择</label>
+				<icon1>#selectwild</icon1>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>随机选择一个文件</label>
+					<tip>有仪式感的选择文件</tip>
+					<icon1>#swapsourcedest</icon1>
+					<function type="script">
+						<instruction>@script JScript</instruction>
+						<instruction>function OnClick(clickData)</instruction>
+						<instruction>{</instruction>
+						<instruction>	var cmd = clickData.func.command;</instruction>
+						<instruction>	var files=clickData.func.sourcetab.files;</instruction>
+						<instruction>	var dirs=clickData.func.sourcetab.dirs;</instruction>
+						<instruction>	var count=files.count+dirs.count;</instruction>
+						<instruction>	var rndcound=Math.floor(Math.random()*count+1)-1</instruction>
+						<instruction>	cmd.RunCommand(&apos;Select RANGE &apos;+rndcound);</instruction>
+						<instruction>}</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>随机选择并播放1个视频文件</label>
+					<tip>Select and Play 1 random movie file</tip>
+					<icon1>#play</icon1>
+					<function type="normal">
+						<instruction>SelectEx RANDOM ITEMCOUNT=1 NAME=&quot;\.(avi|mov|mpg|divx|mp4)$&quot; FILES MAKEVISIBLE DESELECTNOMATCH ACTION=&quot;dblclk&quot;</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>随机选择文件夹缩略图</label>
+					<tip>Select random folder thumbnail</tip>
+					<icon1>#thumbnails</icon1>
+					<function type="script">
+						<instruction>@script jscript</instruction>
+						<instruction>function OnClick(data){</instruction>
+						<instruction>	var cmd = data.func.command, tab = data.func.sourcetab;</instruction>
+						<instruction>	for (var iEnum = new Enumerator(tab.selected_dirs); !iEnum.atEnd(); iEnum.moveNext()){</instruction>
+						<instruction>		var folder = iEnum.item()</instruction>
+						<instruction>		cmd.RunCommand(&apos;SelectEx XLOG=all RANDOM PATH=&quot;&apos;+folder.realpath+&apos;&quot; RECURSE FILES SETVAR=&quot;SelexResult&quot; NAME=&quot;\.jpg$&quot; ECHO&apos;);</instruction>
+						<instruction>		var imagePath = tab.Vars.Get(&quot;SelexResult&quot;);</instruction>
+						<instruction>		if (imagePath==&quot;&quot;) continue;</instruction>
+						<instruction>		cmd.RunCommand(&apos;Image CONVERT=jpg AS=folder.jpg HEIGHT=512 WIDTH=512 &apos;+</instruction>
+						<instruction>			&apos;PRESERVEASPECTRATIO REPLACE=always FROM=&quot;&apos;+imagePath+&apos;&quot; TO=&quot;&apos;+folder.realpath+&apos;&quot;&apos;);</instruction>
+						<instruction>		cmd.RunCommand(&apos;SetAttr ATTR=hs FILE=&quot;&apos;+folder.realpath+&apos;\\folder.jpg&quot;&apos;);</instruction>
+						<instruction>		//DOpus.Output(&quot;EnvResult: &quot; + new ActiveXObject(&quot;WScript.Shell&quot;).Environment(&quot;Process&quot;)(&quot;SRResult&quot;));</instruction>
+						<instruction>	}</instruction>
+						<instruction>}</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>随机选择 8GB mp3专辑(文件夹)</label>
+					<tip>Select 8GB of random mp3 albums (folders)</tip>
+					<icon1>#play2</icon1>
+					<function type="normal">
+						<instruction>SelectEx RANDOM MAXSIZETOTAL=8gb ITEMCOUNT=999999 FOLDERS DESELECTNOMATCH MAKEVISIBLE</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>随机将10个摇滚乐曲放入摇滚文件收集中(慎用)</label>
+					<tip>Put 10 random &quot;Rock&quot; tunes into &quot;Rock&quot; file collection</tip>
+					<icon1>#Windows_icos_plus:24.Play Music</icon1>
+					<function type="script">
+						<instruction>@script jscript</instruction>
+						<instruction />
+						<instruction>var pickGenre = &quot;Rock&quot;;</instruction>
+						<instruction>var doColName = &quot;Rock&quot;;</instruction>
+						<instruction />
+						<instruction>function OnClick(data){</instruction>
+						<instruction>	if (!DOpus.Dlg.Request(&quot;This can take some time, continue?&quot;,&quot;Ok|Cancel&quot;)) return;</instruction>
+						<instruction>	</instruction>
+						<instruction>	var cmd = data.func.command;</instruction>
+						<instruction>	var jsFilter = &quot;&quot;+</instruction>
+						<instruction>    &quot;if (item.metadata == &apos;audio&apos;){ &quot;+</instruction>
+						<instruction>        &quot;var genre = new String(item.metadata.audio[&apos;mp3genre&apos;]);&quot;+</instruction>
+						<instruction>        &quot;if (genre.toLowerCase().indexOf(&apos;&quot;+pickGenre+&quot;&apos;.toLowerCase())!=-1)&quot;+</instruction>
+						<instruction>			&quot;return false; /*do not filter*/&quot;+</instruction>
+						<instruction>    &quot;}&quot;;</instruction>
+						<instruction />
+						<instruction>	cmd.RunCommand(&apos;SelectEx RANDOM &apos;+</instruction>
+						<instruction>					&apos;ITEMCOUNT=10 &apos;+</instruction>
+						<instruction>					&apos;PATH=&quot;&apos;+data.func.sourcetab.path+&apos;&quot; &apos;+</instruction>
+						<instruction>					&apos;JSFILTER=&quot;&apos;+jsFilter+&apos;&quot; &apos;+</instruction>
+						<instruction>					&apos;NAME=&quot;\\.mp3$&quot; &apos;+</instruction>
+						<instruction>					&apos;RECURSE &apos;+</instruction>
+						<instruction>					&apos;XLOG=all &apos;+</instruction>
+						<instruction>					&apos;SETVAR=SelexResult &apos;+</instruction>
+						<instruction>					&apos;COPYTOCOLL=&quot;&apos;+doColName+&apos;&quot; &apos;+</instruction>
+						<instruction>					&apos;COMMANDS=Go NEWTAB=findexisting &quot;coll://&apos;+doColName+&apos;&quot;&apos;);</instruction>
+						<instruction />
+						<instruction>	if (data.func.sourcetab.Vars.Get(&quot;SelexResult&quot;)==&quot;&quot;)</instruction>
+						<instruction>		DOpus.Dlg.Request(&quot;Sorry, no tunes found.&quot;);</instruction>
+						<instruction>}</instruction>
+						<instruction> </instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>随机选择并幻灯片播放20个图片</label>
+					<tip>Select and Slideshow 20 random image files</tip>
+					<icon1>#DOpus9:thumbnails</icon1>
+					<function type="normal">
+						<instruction>SelectEx RANDOM FILES ITEMCOUNT=20 NAME=&quot;\.(jpg|png|gif|bmp)&quot; DESELECTNOMATCH COMMANDS=Show SLIDESHOW</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>随机选择100个mp3文件</label>
+					<tip>Select 100 random mp3 files</tip>
+					<icon1>#togglesounds</icon1>
+					<function type="normal">
+						<instruction>SelectEx RANDOM ITEMCOUNT=100 NAME=&quot;\.mp3$&quot; FILES MAKEVISIBLE DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>随机选择50%项</label>
+					<tip>Select 50% random items</tip>
+					<icon1>#favoritesadd</icon1>
+					<function type="normal">
+						<instruction>SelectEx RANDOM ITEMCOUNTPERC=50 MAKEVISIBLE DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" textcol="none" type="menu_button">
+				<label>复选框</label>
+				<tip>Checkboxes</tip>
+				<icon1>#checkboxmode</icon1>
+				<function type="normal">
+					<instruction>@keydown:none</instruction>
+					<instruction>Set CHECKBOXMODE=Toggle</instruction>
+				</function>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>&amp;Selection to Checkboxes</label>
+					<tip>Set the checkbox state to match the current selection</tip>
+					<icon1>#checkboxmode</icon1>
+					<function type="normal">
+						<instruction>Select TOCHECKS</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" label_pos="right" textcol="none">
+					<label>&amp;Checkboxes to Selection</label>
+					<tip>Set the selection to match the checkbox state</tip>
+					<icon1>#checkboxmode</icon1>
+					<function type="normal">
+						<instruction>Select FROMCHECKS </instruction>
+					</function>
+				</button>
+			</button>
+			<button backcol="none" display="both" separate="yes" textcol="none" type="menu">
+				<label>更多...</label>
+				<tip>More..</tip>
+				<icon1>#advancedselect</icon1>
+				<button backcol="none" display="both" textcol="none">
+					<label>选择前x个文件...</label>
+					<tip>Select the first x files..</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>SelectEx LINEAR FILES ITEMCOUNT={dlgstring|输入要选择的数量:|100} DESELECTNOMATCH MAKEVISIBLE</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>选择前20个文件夹</label>
+					<tip>Select the first 20 folders</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>SelectEx LINEAR ITEMCOUNT=20 FOLDERS MAKEVISIBLE DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+				<button backcol="none" display="both" textcol="none">
+					<label>选择前25%项</label>
+					<tip>Select the first 25% percent</tip>
+					<icon1>#selectinvert</icon1>
+					<function type="normal">
+						<instruction>SelectEx LINEAR ITEMCOUNTPERC=25 MAKEVISIBLE DESELECTNOMATCH</instruction>
+					</function>
+				</button>
+			</button>
+		</button>
+	</buttons>
+</toolbar>

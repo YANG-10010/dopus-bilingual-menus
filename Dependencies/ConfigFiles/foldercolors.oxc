@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<foldercolors>
+	<path color="{F94B9716-10F4-496A-A1CF-06F6F80DC15A}" disabled="yes" pri="1" type="16">
+		<labels>
+			<color>{F94B9716-10F4-496A-A1CF-06F6F80DC15A}</color>
+		</labels>
+		<filter desc="6小时内修改" name="">
+			<clause date1="2024-10-09 16:13:23.544" date2="2024-10-09 16:13:23.544" date_type="modified" match="yes" range="6" range_type="within" range_unit="hour" type="time" />
+		</filter>
+	</path>
+	<path color="{F94B9716-10F4-496A-A1CF-06F6F80DC15A}" disabled="yes" pri="2" type="16">
+		<labels>
+			<color>{F94B9716-10F4-496A-A1CF-06F6F80DC15A}</color>
+		</labels>
+		<filter desc="三天内修改" name="">
+			<clause date1="2024-10-09 23:09:48.359" date2="2024-10-09 23:09:48.359" date_type="modified" match="yes" range="3" range_type="within" range_unit="day" type="datetime" />
+		</filter>
+	</path>
+	<path color="{E42FFB9A-6A15-4054-A4CB-6EC309FEFFE6}" pri="3" type="16">
+		<labels>
+			<color>{E42FFB9A-6A15-4054-A4CB-6EC309FEFFE6}</color>
+		</labels>
+		<filter desc="空文件夹" name="">
+			<clause match="no" type="fullpath" wildcards="yes">lib://*</clause>
+			<clause item_type="dirs" link="and" match="yes" type="type" />
+			<clause comparison="equals" link="and" match="yes" size="0" type="size" unit="bytes" />
+		</filter>
+	</path>
+	<path color="{69243D4C-579A-491B-89BE-8864CB4A2C54}" disabled="yes" pri="4" type="16">
+		<labels>
+			<color>{69243D4C-579A-491B-89BE-8864CB4A2C54}</color>
+		</labels>
+		<filter desc="程序文件" name="">
+			<clause item_type="group" match="yes" type="type">程序</clause>
+		</filter>
+	</path>
+	<path color="{BEDD85FA-FF83-4E93-8C83-FCF8A27FFD9C}" disabled="yes" pri="5" type="16">
+		<labels>
+			<color>{BEDD85FA-FF83-4E93-8C83-FCF8A27FFD9C}</color>
+		</labels>
+		<filter desc="图片" name="">
+			<clause item_type="group" match="yes" type="type">图片</clause>
+		</filter>
+	</path>
+	<path color="{DC28C212-EA05-4ED3-8DC5-7A6B31EDB23C}" disabled="yes" pri="6" type="16">
+		<labels>
+			<color>{DC28C212-EA05-4ED3-8DC5-7A6B31EDB23C}</color>
+		</labels>
+		<filter desc="音视频" name="">
+			<clause item_type="group" match="yes" type="type">视频</clause>
+			<clause item_type="group" link="or" match="yes" type="type">音乐</clause>
+		</filter>
+	</path>
+	<path color="{D7604683-1855-4D41-B63D-C1355E0D8B4B}" disabled="yes" pri="7" type="16">
+		<labels>
+			<color>{D7604683-1855-4D41-B63D-C1355E0D8B4B}</color>
+		</labels>
+		<filter desc="压缩文件" name="">
+			<clause item_type="group" match="yes" type="type">压缩文件</clause>
+		</filter>
+	</path>
+	<path color="{6C9D1F65-E6AE-4522-9D43-285A28FCC6E2}" disabled="yes" type="16">
+		<labels>
+			<color>{6C9D1F65-E6AE-4522-9D43-285A28FCC6E2}</color>
+		</labels>
+		<filter desc="文档" name="">
+			<clause item_type="group" match="yes" type="type">文档</clause>
+		</filter>
+	</path>
+</foldercolors>

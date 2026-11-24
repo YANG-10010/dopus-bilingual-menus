@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<filter desc="今天修改的文件夹和文件" name="今天修改的文件夹和文件">
+	<clause date_type="modified" match="yes" range="1" range_type="within" range_unit="day" type="datetime" />
+</filter>

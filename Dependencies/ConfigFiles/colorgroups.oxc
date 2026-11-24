@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<colorgroups>
+	<categories>
+		<category display="Colors" name="colors" />
+		<category display="Status" name="status" />
+		<category display="主题深色" name="{8CB825A3-E51F-4418-86EA-1E2A4C9E9CD6}" />
+		<category display="图标" name="{A8AB1FA7-E200-4719-A370-AFD325CF2EC3}" />
+		<category display="主题浅色" name="{E6590306-87BD-4788-815C-6EBE435DB33B}" />
+	</categories>
+	<groups donedef="2">
+		<group bg="none" category="colors" fg="#0000ff" flags="0" icon="none" id="{A3B60A15-3008-40C5-B96B-615CF0005B25}" name="Blue" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="status" fg="none" flags="0" icon="none" id="{C866FA3D-5199-49B9-9B68-68436795DC9B}" name="Checked" sel_bg="none" sel_fg="none" status_icon="/home/dopus.exe,-460" />
+		<group bg="none" category="status" fg="none" flags="0" icon="none" id="{04C7CEE6-F91F-49A4-A007-3E7BC82B06FE}" name="Flagged" sel_bg="none" sel_fg="none" status_icon="/home/dopus.exe,-461" />
+		<group bg="none" category="colors" fg="#139b36" flags="0" icon="none" id="{DEA7AD56-705E-46E7-96EB-66FC16625A1C}" name="Green" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="status" fg="none" flags="0" icon="none" id="{284E4FD5-DFCE-4403-95A9-52A86E827927}" name="Important" sel_bg="none" sel_fg="none" status_icon="/home/dopus.exe,-459" />
+		<group bg="none" category="colors" fg="#ff8000" flags="0" icon="none" id="{FEDC8A0B-6F3B-4113-A733-17A008C87ADB}" name="Orange" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="status" fg="none" flags="0x8000" icon="none" id="{E4532FE1-7347-4E47-804A-16A5DBF5BE43}" name="Pinned" sel_bg="none" sel_fg="none" status_icon="/home/dopus.exe,-563" />
+		<group bg="none" category="colors" fg="#8000ff" flags="0" icon="none" id="{53B6C3BF-C513-4E2D-BE6C-71F6C7177492}" name="Purple" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="colors" fg="#da2929" flags="0" icon="none" id="{2F499E2B-8B6E-4B80-8E3B-C73E032E801F}" name="Red" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="colors" fg="#ffff00" flags="0" icon="none" id="{D78C585B-F4B0-43D6-A4C8-42818881674F}" name="亮黄" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="colors" fg="#ad4949" flags="0" icon="none" id="{218F2788-F500-48B7-AA84-8DA3878A4219}" name="暗红" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="colors" fg="#214285" flags="0" icon="none" id="{CBB88B78-88F0-4279-8A26-870C22B3742B}" name="暗蓝" sel_bg="none" sel_fg="none" />
+		<group bg="#ef9e9e" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="none" flags="0" icon="none" id="{037C2063-1EE9-4656-A1B4-760A1DE4B0F5}" name="浅色-底浅红" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="#843700" flags="0" icon="none" id="{6C9D1F65-E6AE-4522-9D43-285A28FCC6E2}" name="浅色-暗棕" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="#ca2727" flags="0" icon="none" id="{BEDD85FA-FF83-4E93-8C83-FCF8A27FFD9C}" name="浅色-暗红" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="#056c00" flags="0" icon="none" id="{F94B9716-10F4-496A-A1CF-06F6F80DC15A}" name="浅色-暗绿" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="#808000" flags="0" icon="none" id="{898EF777-AFD5-43F1-A970-5368B118FAB8}" name="浅色-橄榄" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="#000080" flags="0" icon="none" id="{D7604683-1855-4D41-B63D-C1355E0D8B4B}" name="浅色-海军" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="#a600aa" flags="0" icon="none" id="{69243D4C-579A-491B-89BE-8864CB4A2C54}" name="浅色-紫色" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="#006060" flags="0" icon="none" id="{DC28C212-EA05-4ED3-8DC5-7A6B31EDB23C}" name="浅色-蓝绿" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{E6590306-87BD-4788-815C-6EBE435DB33B}" fg="#001dbd" flags="0" icon="none" id="{7B92F987-5BC6-4C49-8508-BD1592529460}" name="浅色-蓝色" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="colors" fg="#8ac0d0" flags="0" icon="none" id="{49ACE057-F5A9-452A-A966-56256FD0BF77}" name="淡蓝" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="colors" fg="#c6093d" flags="0" icon="none" id="{58FB013E-B9E2-4FD5-93DA-3DC8EDB95C54}" name="深红" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{8CB825A3-E51F-4418-86EA-1E2A4C9E9CD6}" fg="#64ebfc" flags="0" icon="none" id="{C6F641FB-FA15-40A7-B76D-374741AA830C}" name="深色-天蓝" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{8CB825A3-E51F-4418-86EA-1E2A4C9E9CD6}" fg="#96f88f" flags="0" icon="none" id="{82D5D591-D112-4BE1-A17D-E7EEBB003ACB}" name="深色-嫩绿" sel_bg="none" sel_fg="none" />
+		<group bg="#c83333" category="{8CB825A3-E51F-4418-86EA-1E2A4C9E9CD6}" fg="none" flags="0" icon="none" id="{5C231E7B-4360-4593-827D-552E06B2B7E2}" name="深色-底深红" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{8CB825A3-E51F-4418-86EA-1E2A4C9E9CD6}" fg="#ffc069" flags="0" icon="none" id="{498C0834-0860-4044-8165-6DE60F95CFB6}" name="深色-橙色" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{8CB825A3-E51F-4418-86EA-1E2A4C9E9CD6}" fg="#ffbe96" flags="0" icon="none" id="{725E9359-3EA3-42A7-AD81-046205209B15}" name="深色-浅棕" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{8CB825A3-E51F-4418-86EA-1E2A4C9E9CD6}" fg="#fba1fb" flags="0" icon="none" id="{3ECCC908-6783-4D54-A33C-DCBA08DFBBF8}" name="深色-浅紫" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{8CB825A3-E51F-4418-86EA-1E2A4C9E9CD6}" fg="#fdda75" flags="0" icon="none" id="{B6DA97FB-59EF-4FF6-ABAD-280B670A1B6E}" name="深色-黄色" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="{A8AB1FA7-E200-4719-A370-AFD325CF2EC3}" fg="none" flags="0" icon="#ddb4dd" id="{E42FFB9A-6A15-4054-A4CB-6EC309FEFFE6}" name="空文件夹" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="colors" fg="#c8ab87" flags="0" icon="none" id="{40C65D4B-05EE-4D4E-9E3D-F0188896F62D}" name="纸黄" sel_bg="none" sel_fg="none" />
+		<group bg="none" category="colors" fg="#2a827c" flags="0" icon="none" id="{6B990608-6BC9-4A5C-A336-EBEFD2A5B28C}" name="蓝绿" sel_bg="none" sel_fg="none" />
+	</groups>
+</colorgroups>
